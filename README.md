@@ -2,7 +2,7 @@
 # My GitHub profile intro including about, tech-stacks, GitHub stats, activity.
 ## [Check out my Profile](https://mahikolhe23.github.io/Mahikolhe.github.io/)
 
-<a href="https://www.testdome.com/certificates/1069a7e1a5d74f228b396b350ca529df" class="testdome-certificate-stamp silver">
+<!-- <a href="https://www.testdome.com/certificates/1069a7e1a5d74f228b396b350ca529df" class="testdome-certificate-stamp silver">
           <span class="testdome-certificate-name">Mahendra Kolhe</span>
           <span class="testdome-certificate-test-name">Numerical Reasoning</span>
           <span class="testdome-certificate-card-logo">TestDome<br>Certificate</span>
@@ -16,3 +16,4 @@
           link.media = "screen,print",
           document.getElementsByTagName("head")[0].appendChild(link);
       </script>
+ -->
