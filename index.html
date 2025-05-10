@@ -2,310 +2,207 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahendra Kolhe - Data Engineer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
 
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- <link rel="stylesheet" href="assets/css/styles2.css"> -->
+    header {
+      background: #1e88e5;
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+    }
 
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 0;
+    }
 
-    <link rel="shortcut icon" href="assets/img/D.png">
+    h1, h2 {
+      margin-bottom: 0.5rem;
+    }
 
-    <title>Mahi kolhe</title>
+    .section {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-icon:hover {
+      color: #1e88e5;
+    }
+
+    .contact-icon i {
+      transition: transform 0.3s ease;
+    }
+
+    .contact-icon:hover i {
+      transform: scale(1.2);
+    }
+
+    .contact-links a {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
-    <!--===== HEADER =====-->
-    <header class="l-header" style="background-color: #1c3747;">
-        <nav class="nav bd-grid">
-            <div>
-                <a href="" class="nav__logo" style="color: white;">Mahendra </a>
-            </div>
+  <header>
+    <h1>Mahendra Kolhe</h1>
+    <p>Data Engineer | Python | SQL | Azure | Snowflake | Databricks</p>
+  </header>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active" style="color: white;">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link" style="color: white;">About</a></li>
-                    <li class="nav__item"><a href="#work" class="nav__link" style="color: white;">Work</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link" style="color: white;">Skills</a></li>
-                    <li class="nav__item"><a href="#project" class="nav__link" style="color: white;">Projects</a></li>
-                </ul>
-            </div>
+  <div class="container">
+    <!-- About Me Section -->
+    <div class="section about-me">
+      <h2>About Me</h2>
+      <p>Data Engineer with 3+ years of experience in developing scalable data pipelines and modernizing data platforms using tools like Azure Data Factory, Snowflake, Databricks, SQL, and Python.</p>
+    </div>
 
-            <div class="nav__toggle" id="nav-toggle" style="color: white;">
-                <i class='bx bx-menu'></i>
-            </div>
-        </nav>
-    </header>
+    <!-- Skills Section -->
+    <div class="section">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> Python, SQL</li>
+        <li><strong>Cloud Platforms:</strong> Azure, AWS</li>
+        <li><strong>Data Tools:</strong> Azure Data Factory, Databricks, Snowflake, SQL Server, SSIS</li>
+        <li><strong>Big Data & Processing:</strong> PySpark, Apache Spark</li>
+        <li><strong>Version Control:</strong> Git & GitHub</li>
+      </ul>
+    </div>
 
-    <!--===== HOME =====-->
-    <main class="l-main">
-        <section class="home bd-grid" id="home">
-            <div class="home__data">
-                <h1 class="home__title" style="margin-top: 11%;">Hi, I'm <span class="home__title-color"
-                        style="display: inline-block;">Mahendra kolhe</span><br>Software Developer, SDE-I At
-                </h1>
-                <img src="assets/img/xcaliber2.png" alt=""
-                    style="height: 15%; width: 45%; display: inline-block; margin-left: -1.5%;">
-                <br /><br />
+    <!-- Work Experience Section -->
+    <div class="section">
+      <h2>Work Experience</h2>
 
-                <a href="https://drive.google.com/file/d/15rlL5f-aXBoPkLMG9ckULJQa1NO85ni5/view?usp=sharing"
-                    target="blank" class="button">Resume</a>
-            </div>
+      <div class="project">
+        <h3>Xcaliber Infotech</h3>
+        <p><strong>Role:</strong> Data Engineer | <strong>Tech:</strong> Azure Databricks, ADF, Python, SQL Server</p>
+        <ul>
+          <li>Built real-time KPI dashboards using SQL SP and Tableau.</li>
+          <li>Developed a Python-based polling service to monitor and trigger ETL tools, automating file processing.</li>
+          <li>Designed and implemented advanced data transformation pipelines.</li>
+        </ul>
+      </div>
 
-            <div class="home__social" style="margin-top: 2%;">
-                <a href="https://www.linkedin.com/in/mahikolhe/" target="blank" class="home__social-icon"><i
-                        class='bx bxl-linkedin'></i> Linkedin</a>
-                <a href="https://twitter.com/mahikolhe" target="blank" class="home__social-icon"><span class="iconify"
-                        data-icon="simple-icons:twitter"></span> Twitter</a>
-                <a href="https://github.com/Mahikolhe23" target="blank" class="home__social-icon"><i
-                        class='bx bxl-github'></i> Github</a>
-                <a href="https://leetcode.com/Mahikolhe/" target="blank" class="home__social-icon"><span class="iconify"
-                        data-icon="simple-icons:leetcode"></span> Leetcode</a>
-                <a href="https://auth.geeksforgeeks.org/user/mkolhe23" target="blank" class="home__social-icon"><span
-                        class="iconify" data-icon="simple-icons:geeksforgeeks"></span> Geeksforgeeks</a>
-                <a href="https://www.hackerrank.com/mahikolhe23?hr_r=1" target="blank" class="home__social-icon"><span
-                        class="iconify" data-icon="simple-icons:hackerrank"></span> HackerRank</a>
-            </div>
-            <div class="calendar react-activity-calendar tilt" id="calendwer"></div>
+      <div class="project">
+        <h3>TeamLease Services Ltd</h3>
+        <p><strong>Role:</strong> Associate – Data Engineering | <strong>Tech:</strong> SSIS, SQL Server</p>
+        <ul>
+          <li>Built data ingestion pipelines using SSIS to move flat files from email sources into SQL Server.</li>
+          <li>Managed SQL Server database for employee records used by HR.</li>
+        </ul>
+      </div>
+      
+      <div class="project">
+        <h3>Self-Employed</h3>
+        <p><strong>Role:</strong> Freelance Data Engineer | <strong>Tech:</strong> SQL, Python</p>
+        <ul>
+          <li>Delivered custom ETL solutions and dashboards for small businesses.</li>
+          <li>Developed a finance tracker tool that extracted billing data and sent summary alerts via email.</li>
+        </ul>
+      </div>
+    </div>
 
-        </section>
+    <!-- Projects Section -->
+    <div class="section">
+      <h2>Projects</h2>
 
-        <br /><br /><br /><br /><br /><br /><br /><br />
+      <div class="project">
+        <h3>Airport Design Pipeline</h3>
+        <p><strong>Tech:</strong> Azure Data Factory, Databricks, Python, SQL Server (Docker)</p>
+        <ul>
+          <li>Automated data ingestion from multiple sources.</li>
+          <li>Loaded raw data from GitHub into Docker-based SQL Server.</li>
+          <li>Cleaned and enriched data using ADF data flows and Databricks.</li>
+        </ul>
+      </div>
 
-        <!--===== ABOUT =====-->
-        <section class="about section " id="about">
-            <h2 class="section-title">About</h2>
+      <div class="project">
+        <h3>Cloud Data Warehouse Modernization</h3>
+        <p><strong>Tech:</strong> Snowflake, Azure</p>
+        <ul>
+          <li>Reduced Snowflake query execution time by 20%.</li>
+          <li>Implemented Snowpipe for real-time data ingestion.</li>
+          <li>Designed optimized data models for analytics.</li>
+        </ul>
+      </div>
 
-            <div class="about__container bd-grid">
-                <div class="about__img">
-                    <img src="assets/img/about.jpeg" alt="">
-                </div>
+      <div class="project">
+        <h3>Netflix Data Pipeline</h3>
+        <p><strong>Tech:</strong> ADLS, ADF, Databricks, Synapse, Power BI</p>
+        <ul>
+          <li>Built end-to-end Azure-based solution for transforming and visualizing Netflix viewing data.</li>
+        </ul>
+      </div>
 
-                <div>
-                    <h2 class="about__subtitle">I'am Mahi</h2>
-                    <p class="about__text">
-                    <ul style="list-style-type: square; margin-left: 6%;">
-                        <li style="margin-bottom: 2%;">Software Developer, SDE-I @ xcaliber, Pune, India </li>
-                        <li style="margin-bottom: 2%;">Ex-Project Engineer @ thyssenkrupp, Pune, India</li>
-                        <li style="margin-bottom: 2%;">PG-DAC 2023 Grad @ IACSD Pune, India</li>
-                        <li style="margin-bottom: 2%;">B.E. 2018 Grad @ Amravati University, Pusad, India</li>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-        </section>
-        <br /><br /><br /><br /><br /><br />
+      <div class="project">
+        <h3>Personal Finance Tracker</h3>
+        <p><strong>Tech:</strong> Python, SQL, Docker, WhatsApp API</p>
+        <ul>
+          <li>Extracted data from SMS/WhatsApp/Gmail using Python and loaded it into Docker-hosted SQL DB.</li>
+          <li>Generated summary messages and dashboards for monthly expense tracking.</li>
+        </ul>
+      </div>
+    </div>
 
-        <section class="about section " id="work">
-            <h2 class="section-title">Work</h2>
-            <div class="about__container bd-grid">
-                <div class="about__img">
-                    <a href="https://www.linkedin.com/company/xcaliber-infotech-pvt.-ltd./" target="blank"><img
-                            src="assets/img/xcaliber.jpg" alt=""></a>
-                </div>
-
-                <div>
-                    <h2 class="about__subtitle">Software Developer</h2>
-                    <p class="about__text"><span style="font-size: 14px;">April'23 -
-                            Present</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="font-size: 14px;">Pune,
-                            India</span><br /><br />
-                    <div></div>
-                    Contributing in <b> Product Development</b> at xcaliber. <br />
-                    <uol>
-                        <li style="margin-left: 5%; font-size: 13px; margin-bottom: 2%;">As a part of team in xcaliber
-                            to provides Software and Product Development Consulting Services to companies.
-                            We have expertise in Multi-Shore Delivery for different domains like Supply Chain and
-                            Logistics,
-                            IoT, Embedded, IIoT, and Telecom domains.</li>
-                        <!-- <li style="margin-left: 5%; font-size: 13px;"> -->
-                    </uol>
-                </div>
-            </div>
-
-            <br /><br /><br /><br /><br />
-
-            <div class="about__container bd-grid">
-                <div class="about__img">
-                    <a href="https://www.linkedin.com/company/thyssenkrupp-industries-india-pvt-ltd/"
-                        target="blank"><img src="assets/img/tkii.jpg" alt=""></a>
-                </div>
-                <div>
-                    <h2 class="about__subtitle">Project Engineer </h2>
-                    <p class="about__text"><span style="font-size: 14px;">Jan'21 -
-                            April'22</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="font-size: 14px;">Pune,
-                            India</span><br /><br />
-                    <div></div>
-                    Contributed in the Project Management Team <b>Sugar Division</b> <br />
-                    <uol>
-                        <li style="margin-left: 5%; font-size: 13px; margin-bottom: 2%;">thyssenkrupp Industries India
-                            proven track record for supplying turnkey sugar and cogeneration power plants and have till
-                            date successfully supplied and commissioned over 135 sugar plants with major expansions
-                            including more than 550 sugar cane mills, more than 5400 batch and continuous centrifugal
-                            machines and more than 200 boilers.</li>
-                        <!-- <li style="margin-left: 5%; font-size: 13px;"> -->
-                    </uol>
-                    </p>
-                </div>
-            </div>
-
-            <br /><br /><br /><br /><br />
-
-            <div class="about__container bd-grid">
-                <div class="about__img">
-                    <a href="https://www.linkedin.com/company/pennant-engineering-private-limited/about/"
-                        target="blank"><img src="assets/img/pennant.jpg" alt=""></a>
-                </div>
-
-                <div>
-                    <h2 class="about__subtitle">Quality Engineer</h2>
-                    <p class="about__text"><span style="font-size: 14px;">Jan'19 -
-                            Jan'21</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="font-size: 14px;">Pune,
-                            India</span><br /><br />
-                    <div></div>
-                    Contributing in <b> Quality Assurance Team</b> at Pennant. <br />
-                    <uol>
-                        <li style="margin-left: 5%; font-size: 13px; margin-bottom: 2%;">Pennant Engineering was founded
-                            in 1985 by Mr. Christopher J. Fernandes, with a vision of becoming the leading manufacturer
-                            of steam traps. Over the years, Pennant’s working with steam users, gradually led to the
-                            development of additional products, all linked with the steam and process industry.</li>
-                        <!-- <li style="margin-left: 5%; font-size: 13px;"> -->
-                    </uol>
-                </div>
-            </div>
-
-        </section>
-
-        <!--===== SKILLS =====-->
-        <section class="skills section" id="skills">
-            <h2 class="section-title">Skills</h2>
-            <br /><br />
-
-            <div class="skillss">
-                <div class="skills__skill">Java</div>
-                <div class="skills__skill">Spring</div>
-                <div class="skills__skill">Spring Boot</div>
-                <div class="skills__skill">Hibernate</div>
-                <div class="skills__skill">MySQL</div>
-                <div class="skills__skill">Express.js</div>
-            </div>
-            <br />
-            <div class="skillss">
-                <div class="skills__skill">React.js</div>
-                <div class="skills__skill">HTML</div>
-                <div class="skills__skill">CSS</div>
-                <div class="skills__skill">Git & GitHub</div>
-                <div class="skills__skill">Docker</div>
-                <div class="skills__skill">Postman</div>
-                <div class="skills__skill">IntelliJ</div>
-                <div class="skills__skill">VS Code</div>
-                <div class="skills__skill">Advance Excel</div>
-            </div>
-        </section>
-
-        <br /><br /><br />
-
-        <!--===== WORK =====-->
-        <section class="work section" id="project">
-            <h2 class="section-title">Projects</h2>
-
-            <div class="work__container bd-grid">
-                <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                    <div style="text-align: center;"><strong>Dairy Express</strong></div>
-                    <div class="work__img"
-                        style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img
-                            src="assets/img/dairyexpress.png" alt=""></div>
-                    <br />
-                    <div>
-                        <strong style="float:left; padding-left: 10px;">
-                            <a href="https://mahikolhe23.github.io/DairyExpressLive/" target="blank"> Live Link</a>
-                        </strong>
-                        <strong style="float:right; padding-right: 10px;">
-                            <a href="https://github.com/Mahikolhe23/DairyExpress" target="blank"> Source Code</a>
-                        </strong>
-                        <br />
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            DairyExpress Platform can be the greatest blessing for the customer’s everyday morning needs
-                            of dairy products.
-                        </p>
-                        <p>
-                            <span style="margin: 20px; font-size: small;">React.js</span>
-                            <span style="margin: 20px; font-size: small;">Java</span><br />
-                            <span style="margin: 20px; font-size: small;">Spring Boot</span>
-                            <span style="margin: 20px; font-size: small;">MySQL</span>
-                            <span style="margin: 20px; font-size: small;">Hibernate</span>
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                    <div style="text-align: center;"><strong>Paridhan</strong></div>
-                    <div class="work__img"
-                        style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img
-                            src="assets/img/paridhan.png" alt=""></div>
-                    <br />
-                    <div>
-                        <strong style="float:left; padding-left: 10px;">
-                            <a href="https://mahikolhe23.github.io/Paridhan_FrontEnd/" target="blank"> Live Link</a>
-                        </strong>
-                        <strong style="float:right; padding-right: 10px;">
-                            <a href="https://github.com/Mahikolhe23/Paridhan_FrontEnd" target="blank"> Source Code</a>
-                        </strong>
-                        <br />
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            The One-stop Shopping Destination. E-commerce is revolutionizing the way we all shop in
-                            India.Paridhan provides platform that fullfill all your fashion needs
-                        </p>
-                        <p>
-                            <span style="margin: 20px; font-size: small;">React.js</span>
-                            <span style="margin: 20px; font-size: small;">Java</span><br />
-                            <span style="margin: 20px; font-size: small;">Spring Boot</span>
-                            <span style="margin: 20px; font-size: small;">MySQL</span>
-                            <span style="margin: 20px; font-size: small;">Hibernate</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                    <div style="text-align: center;"><strong>Chess</strong></div>
-                    <div class="work__img"
-                        style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img
-                            src="assets/img/chess.png" alt=""></div>
-                    <br />
-                    <div>
-                        <strong style="float:left; padding-left: 10px;">
-                            <a href="https://mahikolhe23.github.io/chess.github.io/" target="blank"> Live Link</a>
-                        </strong>
-                        <strong style="float:right; padding-right: 10px;">
-                            <a href="https://github.com/Mahikolhe23/chess.github.io" target="blank"> Source Code</a>
-                        </strong>
-                        <br />
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            Chess Application using HTML, CSS, JAVASCRIPT.
-                        </p>
-                        <p>
-                            <span style="margin: 20px; font-size: small;">HTML</span>
-                            <span style="margin: 20px; font-size: small;">JAVASCRIPT</span><br />
-                            <span style="margin: 20px; font-size: small;">CSS</span>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-        </section>
-        <!-- skills section ends -->
-
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
-
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
-
-        <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <!-- Contact Section -->
+    <div class="section contact">
+      <h2>Contact</h2>
+      <div class="contact-links">
+        <a href="mailto:mkolhe23@example.com" target="_blank" class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/mahikolhe/" target="_blank" class="contact-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Mahikolhe23" target="_blank" class="contact-icon">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
