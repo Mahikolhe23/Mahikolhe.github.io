@@ -14,7 +14,7 @@
 - 🌐 Exploring cloud-native data pipelines and real-time data processing
 - 🧠 Actively learning Azure certifications: **AZ-900** and **DP-203**
 - 🛠️ Passionate about building data products that solve real-world problems
-- 🧾 Currently working on: [Wallet Watcher 💰](https://mahikolhe23.github.io/Mahikolhe.github.io/)
+- 🧾 Currently working on: [Wallet Watcher 💰](https://github.com/Mahikolhe23/WalletWatcher)
 
 ---
 
