@@ -32,36 +32,9 @@
 
 ---
 
-### 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mahikolhe23&show_icons=true&theme=radical" alt="Mahendra's GitHub Stats" width="48%"/>
-  <img src="https://streak-stats.demolab.com?user=mahikolhe23&theme=radical&hide_border=false" width="48%"/>
-</p>
-
----
-
-### 📈 Activity Graph
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.cyclic.app/graph?username=mahikolhe23&theme=dracula&bg_color=0d1117&hide_border=true" width="100%">
-</p>
-
----
-
 ### 🌐 Portfolio & Certifications
 
 - 🧠 **[Check out my Projects & Portfolio](https://mahikolhe23.github.io/Mahikolhe.github.io/)**  
 - 🧾 **[Python Certification – TestDome](https://www.testdome.com/certificates/1069a7e1a5d74f228b396b350ca529df)**
-
----
-
-### 🔗 Let's Connect
-
-<p>
-  <a href="https://x.com/mahikolhe" target="_blank"><img alt="X" src="https://img.shields.io/badge/-@mahikolhe-1DA1F2?style=flat&logo=twitter&logoColor=white"/></a>
-  <a href="https://www.linkedin.com/in/mahendra-kolhe/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/-MahendraKolhe-blue?style=flat&logo=linkedin"/></a>
-  <a href="mailto:mahikolhe23@gmail.com"><img alt="Email" src="https://img.shields.io/badge/-mahikolhe23@gmail.com-D14836?style=flat&logo=gmail&logoColor=white"/></a>
-</p>
 
 ---
