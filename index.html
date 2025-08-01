@@ -1,208 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahendra Kolhe - Data Engineer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Mahendra Kolhe - Data Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background: #1e88e5;
-      color: white;
-      padding: 1.5rem 0;
-      text-align: center;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 0;
-    }
-
-    h1, h2 {
-      margin-bottom: 0.5rem;
-    }
-
-    .section {
-      margin-bottom: 2rem;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .contact-icon {
-      font-size: 2rem;
-      color: #333;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .contact-icon:hover {
-      color: #1e88e5;
-    }
-
-    .contact-icon i {
-      transition: transform 0.3s ease;
-    }
-
-    .contact-icon:hover i {
-      transform: scale(1.2);
-    }
-
-    .contact-links a {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-links a:hover {
-      text-decoration: underline;
+    body { margin: 0; padding: 0; height: 100vh; overflow: hidden; background-color: #1a202c; }
+    .fade-in { animation: fadeIn 1s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .card { transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+    .card:hover { transform: scale(1.03); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1000; }
+    .modal-content { background: #2d3748; border-radius: 8px; padding: 1rem; max-width: 90%; width: 400px; margin: 10% auto; position: relative; }
+    .close-btn { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 1.5rem; }
+    .text-sm { line-height: 1.2; }
+    .project-link { position: absolute; top: 8px; right: 8px; font-size: 1rem; }
+    @media (max-width: 640px) {
+      .grid-cols-5 { grid-template-columns: 1fr; }
+      .col-span-2, .col-span-3 { grid-column: 1 / -1; }
+      .grid-rows-3 { grid-template-rows: auto auto auto auto; }
+      .modal-content { width: 90%; margin: 20% auto; }
+      .text-2xl { font-size: 1.25rem; }
+      .text-lg { font-size: 1rem; }
+      .text-sm { font-size: 0.75rem; }
+      .text-xs { font-size: 0.65rem; }
     }
   </style>
 </head>
-
-<body>
-  <header>
-    <h1>Mahendra Kolhe</h1>
-    <p>Data Engineer | Python | SQL | Azure | Snowflake | Databricks</p>
-  </header>
-
-  <div class="container">
-    <!-- About Me Section -->
-    <div class="section about-me">
-      <h2>About Me</h2>
-      <p>Data Engineer with 3+ years of experience in developing scalable data pipelines and modernizing data platforms using tools like Azure Data Factory, Snowflake, Databricks, SQL, and Python.</p>
-    </div>
-
-    <!-- Skills Section -->
-    <div class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Languages:</strong> Python, SQL</li>
-        <li><strong>Cloud Platforms:</strong> Azure, AWS</li>
-        <li><strong>Data Tools:</strong> Azure Data Factory, Databricks, Snowflake, SQL Server, SSIS</li>
-        <li><strong>Big Data & Processing:</strong> PySpark, Apache Spark</li>
-        <li><strong>Version Control:</strong> Git & GitHub</li>
-      </ul>
-    </div>
-
-    <!-- Work Experience Section -->
-    <div class="section">
-      <h2>Work Experience</h2>
-
-      <div class="project">
-        <h3>Xcaliber Infotech</h3>
-        <p><strong>Role:</strong> Data Engineer | <strong>Tech:</strong> Azure Databricks, ADF, Python, SQL Server</p>
-        <ul>
-          <li>Built real-time KPI dashboards using SQL SP and Tableau.</li>
-          <li>Developed a Python-based polling service to monitor and trigger ETL tools, automating file processing.</li>
-          <li>Designed and implemented advanced data transformation pipelines.</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <h3>TeamLease Services Ltd</h3>
-        <p><strong>Role:</strong> Associate – Data Engineering | <strong>Tech:</strong> SSIS, SQL Server</p>
-        <ul>
-          <li>Built data ingestion pipelines using SSIS to move flat files from email sources into SQL Server.</li>
-          <li>Managed SQL Server database for employee records used by HR.</li>
-        </ul>
-      </div>
-      
-      <div class="project">
-        <h3>Self-Employed</h3>
-        <p><strong>Role:</strong> Freelance Data Engineer | <strong>Tech:</strong> SQL, Python</p>
-        <ul>
-          <li>Delivered custom ETL solutions and dashboards for small businesses.</li>
-          <li>Developed a finance tracker tool that extracted billing data and sent summary alerts via email.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Projects Section -->
-    <div class="section">
-      <h2>Projects</h2>
-
-      <div class="project">
-        <h3>Airport Design Pipeline</h3>
-        <p><strong>Tech:</strong> Azure Data Factory, Databricks, Python, SQL Server (Docker)</p>
-        <ul>
-          <li>Automated data ingestion from multiple sources.</li>
-          <li>Loaded raw data from GitHub into Docker-based SQL Server.</li>
-          <li>Cleaned and enriched data using ADF data flows and Databricks.</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <h3>Cloud Data Warehouse Modernization</h3>
-        <p><strong>Tech:</strong> Snowflake, Azure</p>
-        <ul>
-          <li>Reduced Snowflake query execution time by 20%.</li>
-          <li>Implemented Snowpipe for real-time data ingestion.</li>
-          <li>Designed optimized data models for analytics.</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <h3>Netflix Data Pipeline</h3>
-        <p><strong>Tech:</strong> ADLS, ADF, Databricks, Synapse, Power BI</p>
-        <ul>
-          <li>Built end-to-end Azure-based solution for transforming and visualizing Netflix viewing data.</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <h3>Personal Finance Tracker</h3>
-        <p><strong>Tech:</strong> Python, SQL, Docker, WhatsApp API</p>
-        <ul>
-          <li>Extracted data from SMS/WhatsApp/Gmail using Python and loaded it into Docker-hosted SQL DB.</li>
-          <li>Generated summary messages and dashboards for monthly expense tracking.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Contact Section -->
-    <div class="section contact">
-      <h2>Contact</h2>
-      <div class="contact-links">
-        <a href="mailto:mkolhe23@example.com" target="_blank" class="contact-icon">
+<body class="text-white font-sans">
+  <div class="grid grid-cols-1 md:grid-cols-5 h-screen gap-2 p-2 fade-in">
+    <!-- Header and Contact -->
+    <div class="md:col-span-2 bg-gray-800 rounded-lg p-3 flex flex-col justify-center items-center text-center">
+      <h1 class="text-2xl md:text-3xl font-bold mb-1">Mahendra Kolhe</h1>
+      <p class="text-base md:text-lg mb-1">Data Engineer | Pune, India</p>
+      <p class="text-xs md:text-sm mb-2">🚀 Building Scalable Pipelines with Azure & Python</p>
+      <div class="flex gap-2 flex-wrap justify-center">
+        <a href="mailto:mkolhe23@gmail.com" class="text-xl md:text-2xl hover:text-blue-400 transition" title="Email">
           <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://www.linkedin.com/in/mahikolhe/" target="_blank" class="contact-icon">
+        <a href="https://www.linkedin.com/in/mahikolhe/" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://github.com/Mahikolhe23" target="_blank" class="contact-icon">
-          <i class="fab fa-github"></i>
+        <a href="https://x.com/mahikolhe" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="Twitter (X)">
+            <i class="fab fa-twitter"></i>
         </a>
+        <a href="https://drive.google.com/file/d/1-WrMbHTMcUNiJfYkC3sL-Zu4LHO_HOiI/view?usp=sharing" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="Resume">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+
+
+      </div>
+      <p class="text-xs mt-2 text-gray-300">3+ years crafting data solutions</p>
+    </div>
+
+    <!-- Experience, Projects, and Coding Platforms -->
+    <div class="md:col-span-3 grid grid-rows-3 gap-2">
+      <!-- Experience -->
+      <div class="bg-gray-800 rounded-lg p-3 card">
+        <h2 class="text-base md:text-lg font-bold mb-1">Experience</h2>
+        <div class="grid grid-cols-2 gap-2 text-sm">
+          <div class="card bg-gray-700 rounded-lg p-2" onclick="openModal('xcaliber-modal')">
+            <h3 class="text-xs md:text-sm font-bold">Xcaliber Infotech</h3>
+            <p class="text-xs text-gray-300">Data Engineer | May 2023–Present</p>
+          </div>
+          <div class="card bg-gray-700 rounded-lg p-2" onclick="openModal('teamlease-modal')">
+            <h3 class="text-xs md:text-sm font-bold">TeamLease Services</h3>
+            <p class="text-xs text-gray-300">Associate – Data Eng. | Jan 2021–Feb 2022</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="bg-gray-800 rounded-lg p-3 card">
+        <h2 class="text-base md:text-lg font-bold mb-1">Projects</h2>
+        <div class="grid grid-cols-2 gap-2 text-sm">
+          <div class="card bg-gray-700 rounded-lg p-2 relative" onclick="openModal('netflix-modal')">
+            <a href="https://github.com/Mahikolhe23/Netflix-Data-Pipeline" target="_blank" class="project-link text-blue-400 hover:text-blue-300" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <h3 class="text-xs md:text-sm font-bold">🎬 Netflix Pipeline</h3>
+            <p class="text-xs text-gray-300">ADF, Databricks, Synapse</p>
+          </div>
+          <div class="card bg-gray-700 rounded-lg p-2 relative" onclick="openModal('airport-modal')">
+            <a href="https://github.com/Mahikolhe23/Airport-Design-Pipeline" target="_blank" class="project-link text-blue-400 hover:text-blue-300" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <h3 class="text-xs md:text-sm font-bold">✈️ Airport Pipeline</h3>
+            <p class="text-xs text-gray-300">ADF, PySpark, SQL</p>
+          </div>
+          <div class="card bg-gray-700 rounded-lg p-2 relative" onclick="openModal('wallet-modal')">
+            <a href="https://github.com/Mahikolhe23/WalletWatcher" target="_blank" class="project-link text-blue-400 hover:text-blue-300" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <h3 class="text-xs md:text-sm font-bold">📊 Wallet Watcher</h3>
+            <p class="text-xs text-gray-300">Python, Pandas, WhatsApp API</p>
+          </div>
+          <div class="card bg-gray-700 rounded-lg p-2 relative" onclick="openModal('formula1-modal')">
+            <a href="https://github.com/Mahikolhe23/formula1_pipeline" target="_blank" class="project-link text-blue-400 hover:text-blue-300" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <h3 class="text-xs md:text-sm font-bold">🏎️ Formula1 Pipeline</h3>
+            <p class="text-xs text-gray-300">Azure, PySpark, SQL</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coding Platforms -->
+      <div class="bg-gray-800 rounded-lg p-3 card">
+        <h2 class="text-base md:text-lg font-bold mb-1">Coding Platforms</h2>
+        <div class="flex gap-2 justify-center text-sm">
+          <a href="https://leetcode.com/mahikolhe23" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="LeetCode">
+            <i class="fas fa-code"></i>
+          </a>
+          <a href="https://www.hackerrank.com/mahikolhe23" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="HackerRank">
+            <i class="fab fa-hackerrank"></i>
+          </a>
+          <a href="https://www.kaggle.com/mahendrakolhe" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="Kaggle">
+            <i class="fab fa-kaggle"></i>
+          </a>
+          <a href="https://www.geeksforgeeks.org/user/mkolhe23/" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="GeeksforGeeks">
+            <i class="fas fa-laptop-code"></i>
+          </a>
+          <a href="https://stackoverflow.com/users/20132615/mahi" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="Stack Overflow">
+            <i class="fab fa-stack-overflow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Centered Skills and Certifications -->
+    <div class="md:col-span-5 bg-gray-800 rounded-lg p-3 flex flex-col items-center text-center text-sm">
+      <h2 class="text-base md:text-lg font-bold mb-1">Skills & Certifications</h2>
+      <div class="flex gap-1 flex-wrap justify-center">
+        <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Python</span>
+        <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">SQL</span>
+        <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">PySpark</span>
+        <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Azure</span>
+        <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Databricks</span>
+        <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Snowflake</span>
+        <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Airflow (Learning)</span>
+        <span class="bg-green-500 text-white px-2 py-0.5 rounded text-xs">HackerRank Python</span>
+        <span class="bg-green-500 text-white px-2 py-0.5 rounded text-xs">HackerRank SQL</span>
+        <span class="bg-green-500 text-white px-2 py-0.5 rounded text-xs">Udemy SQL</span>
+      </div>
+      <p class="text-xs mt-1">🔥 Now exploring: Airflow for orchestration</p>
+    </div>
+
+    <!-- Modals for Experience -->
+    <div id="xcaliber-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('xcaliber-modal')">&times;</span>
+        <h3 class="text-lg font-bold mb-1">Xcaliber Infotech | Data Engineer</h3>
+        <p class="text-xs text-gray-300">May 2023–Present</p>
+        <p class="text-xs text-gray-300">Tech consultancy delivering cloud-based data solutions</p>
+        <ul class="list-disc pl-4 text-xs mt-1">
+          <li>Built Azure ETL pipelines, reducing execution time by 40%</li>
+          <li>Created real-time KPI dashboards, cutting report time by 70%</li>
+          <li>Automated 400K+ transactions with 99.9% accuracy</li>
+        </ul>
+        <p class="text-xs text-gray-300 mt-1">Tech: Azure Data Factory, Databricks, Snowflake, Power BI</p>
+      </div>
+    </div>
+    <div id="teamlease-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('teamlease-modal')">&times;</span>
+        <h3 class="text-lg font-bold mb-1">TeamLease Services Ltd | Associate – Data Engineering</h3>
+        <p class="text-xs text-gray-300">Jan 2021–Feb 2022</p>
+        <p class="text-xs text-gray-300">HR solutions provider with data-driven operations</p>
+        <ul class="list-disc pl-4 text-xs mt-1">
+          <li>Developed SSIS pipelines, boosting efficiency by 30%</li>
+          <li>Automated HR alerts, reducing manual work by 50%</li>
+        </ul>
+        <p class="text-xs text-gray-300 mt-1">Tech: SSIS, SQL Server</p>
+      </div>
+    </div>
+
+    <!-- Modals for Projects -->
+    <div id="netflix-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('netflix-modal')">&times;</span>
+        <h3 class="text-lg font-bold mb-1">🎬 Netflix Data Pipeline</h3>
+        <p class="text-xs">Built end-to-end Azure pipeline to transform and visualize 10M+ records using Medallion Architecture.</p>
+        <p class="text-xs text-gray-300 mt-1">Tech: Azure Data Factory, Databricks, Synapse, Power BI</p>
+      </div>
+    </div>
+    <div id="airport-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('airport-modal')">&times;</span>
+        <h3 class="text-lg font-bold mb-1">✈️ Airport Design Pipeline</h3>
+        <p class="text-xs">Automated real-time IoT and API data ingestion for airport analytics.</p>
+        <p class="text-xs text-gray-300 mt-1">Tech: Azure Data Factory, PySpark, SQL</p>
+      </div>
+    </div>
+    <div id="wallet-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('wallet-modal')">&times;</span>
+        <h3 class="text-lg font-bold mb-1">📊 Wallet Watcher</h3>
+        <p class="text-xs">Automated expense tracking from emails, saving 5+ hours/week, with WhatsApp notifications.</p>
+        <p class="text-xs text-gray-300 mt-1">Tech: Python, Pandas, WhatsApp API</p>
+      </div>
+    </div>
+    <div id="formula1-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('formula1-modal')">&times;</span>
+        <h3 class="text-lg font-bold mb-1">🏎️ Formula1 Pipeline</h3>
+        <p class="text-xs">Real-time pipeline for F1 data insights with 99% uptime.</p>
+        <p class="text-xs text-gray-300 mt-1">Tech: Azure, PySpark, SQL</p>
       </div>
     </div>
   </div>
-</body>
 
+  <script>
+    // Add fade-in effect on load
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.fade-in').style.opacity = '1';
+    });
+
+    // Modal functions
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = 'block';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+
+    // Add hover effect to cards
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'scale(1.03)';
+        card.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(1)';
+        card.style.boxShadow = 'none';
+      });
+    });
+
+    // Close modals when clicking outside
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
 </html>
