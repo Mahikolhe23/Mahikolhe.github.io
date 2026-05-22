@@ -1,329 +1,887 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahendra Kolhe - Data Engineer</title>
-  <meta name="description" content="Mahendra Kolhe: Experienced Data Engineer specializing in Azure, PySpark, and scalable ETL pipelines. Based in Pune, India.">
-  <meta name="keywords" content="data engineer, Azure Data Factory, PySpark, SQL, Pune, Databricks">
-  <meta name="author" content="Mahendra Kolhe">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahendra Kolhe | Data Engineer & Freelance Data Solutions Specialist</title>
+  <meta name="description" content="Mahendra Kolhe is a Data Engineer and freelance data solutions specialist in Pune, India. He builds scalable Spark, Databricks, Snowflake, Azure, AWS, SQL, SSIS, and AI-powered automation solutions." />
+  <meta name="keywords" content="Mahendra Kolhe, Data Engineer, Freelance Data Solutions, Spark, Snowflake, Databricks, Azure, AWS, PySpark, SQL, SSIS, ETL, ELT, Data Warehousing, Pune, AI News Automation" />
+  <meta name="author" content="Mahendra Kolhe" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://mahikolhe.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mahikolhe.github.io/" />
+  <meta property="og:title" content="Mahendra Kolhe | Data Engineer" />
+  <meta property="og:description" content="Premium data engineering, scalable pipelines, Spark, Databricks, Snowflake, SQL optimization, custom automation, and freelance AI news automation solutions." />
+  <meta property="og:site_name" content="Mahendra Kolhe Portfolio" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mahendra Kolhe | Data Engineer" />
+  <meta name="twitter:description" content="Data Engineer and freelance data solutions specialist building scalable pipelines and custom automation systems." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"]
+          },
+          colors: {
+            ink: "#020617",
+            panel: "rgba(15, 23, 42, 0.72)",
+            cyanGlow: "#22d3ee",
+            blueGlow: "#3b82f6"
+          },
+          boxShadow: {
+            premium: "0 30px 120px rgba(14, 165, 233, 0.18)",
+            glass: "inset 0 1px 0 rgba(255,255,255,.10), 0 24px 80px rgba(0,0,0,.38)"
+          }
+        }
+      }
+    };
+  </script>
+
   <style>
-    body { margin: 0; padding: 0; height: 100vh; overflow: hidden; background-color: #1a202c; }
-    .fade-in { animation: fadeIn 1s ease-in; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .card { transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
-    .card:hover { transform: scale(1.03); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
-    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1000; }
-    .modal-content { background: #2d3748; border-radius: 8px; padding: 1rem; max-width: 90%; width: 400px; margin: 10% auto; position: relative; }
-    .close-btn { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 1.5rem; }
-    .text-sm { line-height: 1.2; }
-    .project-link { position: absolute; top: 8px; right: 8px; font-size: 1rem; }
-    @media (max-width: 640px) {
-      .grid-cols-5 { grid-template-columns: 1fr; }
-      .col-span-2, .col-span-3 { grid-column: 1 / -1; }
-      .grid-rows-3 { grid-template-rows: auto auto auto auto; }
-      .modal-content { width: 90%; margin: 20% auto; }
-      .text-2xl { font-size: 1.25rem; }
-      .text-lg { font-size: 1rem; }
-      .text-sm { font-size: 0.75rem; }
-      .text-xs { font-size: 0.65rem; }
+    :root {
+      --bg: #020617;
+      --panel: rgba(15, 23, 42, 0.72);
+      --line: rgba(148, 163, 184, 0.20);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --cyan: #22d3ee;
+      --blue: #3b82f6;
+      --violet: #8b5cf6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 5%, rgba(34, 211, 238, 0.18), transparent 28rem),
+        radial-gradient(circle at 85% 8%, rgba(59, 130, 246, 0.20), transparent 28rem),
+        radial-gradient(circle at 50% 48%, rgba(139, 92, 246, 0.10), transparent 36rem),
+        linear-gradient(180deg, #020617 0%, #050816 45%, #020617 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, black, transparent 82%);
+      z-index: -2;
+    }
+
+    #network {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.42;
+    }
+
+    .glass {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.48));
+      border: 1px solid var(--line);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 24px 80px rgba(0,0,0,.34);
+      backdrop-filter: blur(18px);
+    }
+
+    .premium-border {
+      position: relative;
+    }
+
+    .premium-border::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(34, 211, 238, .72), rgba(59, 130, 246, .22), rgba(139, 92, 246, .58));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .shine {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shine::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      transform: translateX(-120%);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+      transition: transform .8s ease;
+    }
+
+    .shine:hover::after {
+      transform: translateX(120%);
+    }
+
+    .hero-title {
+      letter-spacing: -0.065em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #f8fafc, #67e8f9 36%, #60a5fa 68%, #c4b5fd);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .float-card {
+      animation: floatCard 7s ease-in-out infinite;
+    }
+
+    .float-card:nth-child(2) {
+      animation-delay: -2s;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-line {
+      background: linear-gradient(180deg, rgba(34,211,238,.85), rgba(59,130,246,.28), transparent);
+    }
+
+    .project-visual {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(34, 211, 238, .38), transparent 28%),
+        radial-gradient(circle at 80% 35%, rgba(59, 130, 246, .32), transparent 26%),
+        linear-gradient(135deg, rgba(15,23,42,.96), rgba(30,41,59,.72));
+    }
+
+    .project-visual::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(148, 163, 184, .16);
+      border-radius: 1.25rem;
+      background-image:
+        linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    .project-visual i {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        letter-spacing: -0.045em;
+      }
     }
   </style>
+
   <script type="application/ld+json">
     {
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
       "@type": "Person",
       "name": "Mahendra Kolhe",
-      "jobTitle": "Data Engineer",
+      "jobTitle": "Data Engineer & Freelance Data Solutions Specialist",
+      "email": "mailto:mkolhe23@gmail.com",
+      "telephone": "+91-7350458043",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Pune",
         "addressCountry": "India"
       },
-      "email": "mailto:mkolhe23@gmail.com",
-      "url": "https://www.linkedin.com/in/mahikolhe/",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "ADP"
+      },
+      "url": "https://mahikolhe.github.io/",
       "sameAs": [
         "https://www.linkedin.com/in/mahikolhe/",
-        "https://x.com/mahikolhe",
         "https://github.com/Mahikolhe23",
+        "https://x.com/mahikolhe",
         "https://medium.com/@mkolhe23"
+      ],
+      "knowsAbout": [
+        "Azure Data Factory",
+        "Azure Databricks",
+        "AWS",
+        "Snowflake",
+        "Apache Spark",
+        "PySpark",
+        "SQL",
+        "SSIS",
+        "Azure Data Lake",
+        "ETL",
+        "Data Warehousing",
+        "Automation"
       ]
     }
   </script>
 </head>
-<body class="text-white font-sans">
-  <div class="grid grid-cols-1 md:grid-cols-5 h-screen gap-2 p-2 fade-in">
-    <!-- Header and Contact -->
-    <div class="md:col-span-2 bg-gray-800 rounded-lg p-3 flex flex-col justify-center items-center text-center">
-      <h1 class="text-2xl md:text-3xl font-bold mb-1">Mahendra Kolhe</h1>
-      <p class="text-base md:text-lg mb-1">Data Engineer | Pune, India</p>
-      <p class="text-xs md:text-sm mb-2">🚀 Building Scalable Pipelines with Azure & Python</p>
-      <div class="flex gap-2 flex-wrap justify-center">
-        <a href="mailto:mkolhe23@gmail.com" class="text-xl md:text-2xl hover:text-blue-400 transition" title="Email" aria-label="Email Mahendra">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/mahikolhe/" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="LinkedIn" aria-label="LinkedIn Profile">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://x.com/mahikolhe" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="Twitter (X)" aria-label="Twitter Profile">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://drive.google.com/file/d/10WwK05e5uIkeKZAn_gUrH2PpVKNzhVya/view?usp=sharing" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="Resume" aria-label="Download Resume">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-      </div>
-      <p class="text-xs mt-2 text-gray-300">3.5+ years crafting data solutions</p>
-    </div>
 
-    <!-- Experience, Projects, and Coding Platforms -->
-    <div class="md:col-span-3 grid grid-rows-3 gap-2">
-      <!-- Experience -->
-      <div class="bg-gray-800 rounded-lg p-3 card">
-        <h2 class="text-base md:text-lg font-bold mb-1">Experience</h2>
-        <div class="grid grid-cols-2 gap-2 text-sm">
-          <div class="card bg-gray-700 rounded-lg p-2" onclick="openModal('xcaliber-modal')">
-            <h3 class="text-xs md:text-sm font-bold">Xcaliber Infotech</h3>
-            <p class="text-xs text-gray-300">Data Engineer | May 2023–Present</p>
+<body class="font-sans antialiased">
+  <canvas id="network" aria-hidden="true"></canvas>
+
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/65 backdrop-blur-2xl">
+    <nav class="mx-auto flex h-20 w-[min(92rem,calc(100%-2rem))] items-center justify-between">
+      <a href="#home" class="group flex items-center gap-3" aria-label="Mahendra Kolhe home">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-cyan-300 via-blue-400 to-violet-400 font-display text-lg font-black text-slate-950 shadow-lg shadow-cyan-500/20">MK</span>
+        <span class="hidden sm:block">
+          <span class="block font-display text-sm font-bold text-white">Mahendra Kolhe</span>
+          <span class="block text-xs text-slate-400">Data Engineer</span>
+        </span>
+      </a>
+
+      <button id="menuButton" class="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/5 text-white md:hidden" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 md:flex">
+        <a class="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#about">About</a>
+        <a class="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#experience">Experience</a>
+        <a class="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#projects">Projects</a>
+        <a class="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#skills">Skills</a>
+        <a class="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#contact">Contact</a>
+      </div>
+
+      <a href="#contact" class="hidden rounded-full bg-cyan-300 px-5 py-3 text-sm font-black text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:-translate-y-0.5 hover:bg-white lg:inline-flex">Hire for Freelance</a>
+    </nav>
+
+    <div id="mobileMenu" class="mx-4 mb-4 hidden rounded-3xl border border-white/10 bg-slate-950/95 p-3 shadow-2xl shadow-black/40 md:hidden">
+      <a class="block rounded-2xl px-4 py-3 font-semibold text-slate-300 hover:bg-white/10 hover:text-white" href="#about">About</a>
+      <a class="block rounded-2xl px-4 py-3 font-semibold text-slate-300 hover:bg-white/10 hover:text-white" href="#experience">Experience</a>
+      <a class="block rounded-2xl px-4 py-3 font-semibold text-slate-300 hover:bg-white/10 hover:text-white" href="#projects">Projects</a>
+      <a class="block rounded-2xl px-4 py-3 font-semibold text-slate-300 hover:bg-white/10 hover:text-white" href="#skills">Skills</a>
+      <a class="block rounded-2xl px-4 py-3 font-semibold text-slate-300 hover:bg-white/10 hover:text-white" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="relative mx-auto grid min-h-screen w-[min(92rem,calc(100%-2rem))] items-center gap-12 pb-16 pt-32 lg:grid-cols-[1.08fr_.92fr] lg:pt-24">
+      <div class="reveal">
+        <div class="mb-7 inline-flex items-center gap-3 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-200">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-300 opacity-75"></span>
+            <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-300"></span>
+          </span>
+          Available for freelance data automation projects
+        </div>
+
+        <p class="mb-4 font-display text-sm font-bold uppercase tracking-[0.28em] text-blue-200/80">Pune, India · Data Engineer at ADP</p>
+        <h1 class="hero-title font-display text-5xl font-black leading-[0.92] text-white sm:text-6xl lg:text-7xl xl:text-8xl">
+          Mahendra <span class="gradient-text">Kolhe</span>
+        </h1>
+        <div class="mt-6 min-h-[3rem] font-display text-2xl font-bold text-cyan-200 sm:text-3xl">
+          <span id="animatedText">Data Engineer</span>
+        </div>
+        <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
+          Data Engineer | Scalable Data Pipelines | Custom Automation Solutions
+        </p>
+        <p class="mt-5 max-w-3xl text-base leading-8 text-slate-400 sm:text-lg">
+          I build production-grade data pipelines, analytics workflows, and automation systems that help teams replace manual operations with reliable, measurable, and client-ready solutions.
+        </p>
+
+        <div class="mt-9 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+          <a href="#projects" class="shine inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-cyan-300 to-blue-400 px-6 py-4 font-black text-slate-950 shadow-xl shadow-cyan-500/20 transition hover:-translate-y-1">
+            <i class="fa-solid fa-layer-group"></i>
+            View Projects
+          </a>
+          <a href="https://drive.google.com/file/d/10WwK05e5uIkeKZAn_gUrH2PpVKNzhVya/view?usp=sharing" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 font-black text-white transition hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/10">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            Download Resume
+          </a>
+          <a href="#contact" class="inline-flex items-center justify-center gap-3 rounded-2xl border border-blue-300/30 bg-blue-400/10 px-6 py-4 font-black text-blue-100 transition hover:-translate-y-1 hover:bg-blue-400/20">
+            <i class="fa-solid fa-handshake"></i>
+            Hire for Freelance
+          </a>
+        </div>
+
+        <div class="mt-10 grid max-w-3xl grid-cols-3 gap-3">
+          <div class="glass rounded-3xl p-5">
+            <p id="totalExperience" class="font-display text-3xl font-black text-white">4.5+</p>
+            <p class="mt-1 text-sm font-semibold text-slate-400">Years</p>
           </div>
-          <div class="card bg-gray-700 rounded-lg p-2" onclick="openModal('teamlease-modal')">
-            <h3 class="text-xs md:text-sm font-bold">TeamLease Services</h3>
-            <p class="text-xs text-gray-300">Associate – Data Eng. | Jan 2021–Feb 2022</p>
+          <div class="glass rounded-3xl p-5">
+            <p class="font-display text-3xl font-black text-white">30+</p>
+            <p class="mt-1 text-sm font-semibold text-slate-400">Pipelines</p>
+          </div>
+          <div class="glass rounded-3xl p-5">
+            <p class="font-display text-3xl font-black text-white">99%</p>
+            <p class="mt-1 text-sm font-semibold text-slate-400">Accuracy</p>
           </div>
         </div>
       </div>
 
-      <!-- Projects -->
-      <div class="bg-gray-800 rounded-lg p-3 card">
-        <h2 class="text-base md:text-lg font-bold mb-1">Projects</h2>
-        <div class="grid grid-cols-2 gap-2 text-sm">
-          <div class="card bg-gray-700 rounded-lg p-2 relative" onclick="openModal('netflix-modal')">
-            <a href="https://github.com/Mahikolhe23/Netflix-Data-Pipeline" target="_blank" class="project-link text-blue-400 hover:text-blue-300" title="GitHub" aria-label="Netflix Pipeline GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <h3 class="text-xs md:text-sm font-bold">Netflix Data Pipeline</h3>
-            <p class="text-xs text-gray-300">ADF, Databricks, Synapse</p>
+      <div class="reveal relative">
+        <div class="premium-border glass rounded-[2rem] p-5 sm:p-6">
+          <div class="mb-6 flex items-center justify-between">
+            <div class="flex gap-2">
+              <span class="h-3 w-3 rounded-full bg-cyan-300"></span>
+              <span class="h-3 w-3 rounded-full bg-blue-400"></span>
+              <span class="h-3 w-3 rounded-full bg-violet-400"></span>
+            </div>
+            <span class="font-mono text-xs font-bold uppercase tracking-[0.2em] text-slate-500">pipeline.control</span>
           </div>
-          <div class="card bg-gray-700 rounded-lg p-2 relative" onclick="openModal('airport-modal')">
-            <a href="https://github.com/Mahikolhe23/Airport-Design-Pipeline" target="_blank" class="project-link text-blue-400 hover:text-blue-300" title="GitHub" aria-label="Airport Pipeline GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <h3 class="text-xs md:text-sm font-bold">Airport Design Pipeline</h3>
-            <p class="text-xs text-gray-300">ADF, PySpark, SQL</p>
-          </div>
-          <div class="card bg-gray-700 rounded-lg p-2 relative" onclick="openModal('wallet-modal')">
-            <a href="https://github.com/Mahikolhe23/WalletWatcher" target="_blank" class="project-link text-blue-400 hover:text-blue-300" title="GitHub" aria-label="Wallet Watcher GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <h3 class="text-xs md:text-sm font-bold">Wallet Watcher</h3>
-            <p class="text-xs text-gray-300">Python, Pandas, WhatsApp API</p>
-          </div>
-          <div class="card bg-gray-700 rounded-lg p-2 relative" onclick="openModal('formula1-modal')">
-            <a href="https://github.com/Mahikolhe23/formula1_pipeline" target="_blank" class="project-link text-blue-400 hover:text-blue-300" title="GitHub" aria-label="Formula1 Pipeline GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <h3 class="text-xs md:text-sm font-bold">Formula1 Pipeline</h3>
-            <p class="text-xs text-gray-300">Azure, PySpark, SQL</p>
+
+          <div class="grid gap-4">
+            <div class="float-card rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-5">
+              <p class="text-sm font-bold uppercase tracking-[0.2em] text-cyan-200">Current role</p>
+              <h2 class="mt-3 font-display text-3xl font-black text-white">Data Engineering at ADP</h2>
+              <p class="mt-2 text-slate-400">Enterprise data systems · pipelines · reporting workflows</p>
+            </div>
+            <div class="float-card rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+              <div class="grid grid-cols-4 gap-3 text-center">
+                <div>
+                  <i class="fa-solid fa-cloud text-cyan-300"></i>
+                  <p class="mt-2 text-xs font-bold text-slate-400">ADF</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-bolt text-blue-300"></i>
+                  <p class="mt-2 text-xs font-bold text-slate-400">Spark</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-database text-cyan-300"></i>
+                  <p class="mt-2 text-xs font-bold text-slate-400">SQL</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-robot text-blue-300"></i>
+                  <p class="mt-2 text-xs font-bold text-slate-400">AI</p>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-slate-950/70 p-5">
+              <div class="mb-4 flex items-center justify-between">
+                <span class="text-sm font-bold text-slate-300">Automation workflow</span>
+                <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-black text-emerald-300">LIVE</span>
+              </div>
+              <div class="space-y-3">
+                <div class="h-2 rounded-full bg-slate-800"><div class="h-2 w-[92%] rounded-full bg-gradient-to-r from-cyan-300 to-blue-400"></div></div>
+                <div class="h-2 rounded-full bg-slate-800"><div class="h-2 w-[78%] rounded-full bg-gradient-to-r from-blue-400 to-violet-400"></div></div>
+                <div class="h-2 rounded-full bg-slate-800"><div class="h-2 w-[86%] rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300"></div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Coding Platforms -->
-      <div class="bg-gray-800 rounded-lg p-3 card">
-        <h2 class="text-base md:text-lg font-bold mb-1">Coding Platforms</h2>
-        <div class="flex gap-2 flex-wrap justify-center text-sm">
-          <a href="https://leetcode.com/u/Mahikolhe/" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="LeetCode" aria-label="LeetCode Profile">
-            <i class="fas fa-code"></i>
+    <section id="about" class="mx-auto w-[min(92rem,calc(100%-2rem))] py-20">
+      <div class="reveal grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
+        <div>
+          <p class="font-display text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">About</p>
+          <h2 class="mt-4 font-display text-4xl font-black tracking-tight text-white sm:text-5xl">Data engineering that feels calm, controlled, and business-ready.</h2>
+        </div>
+        <div class="glass rounded-[2rem] p-6 sm:p-8">
+          <p class="text-lg leading-8 text-slate-300">
+            I am a Data Engineer and freelance data solutions specialist focused on scalable pipelines, reliable ETL/ELT systems, SQL workflows, and analytics-ready cloud platforms. My work spans Spark, Databricks, Snowflake, Azure, AWS, SSIS, SQL optimization, and automation.
+          </p>
+          <p class="mt-5 text-lg leading-8 text-slate-300">
+            Alongside enterprise work, I build freelance automation solutions for clients. A current focus is an intelligent news automation system that replaces manual news search. I am also building a custom search engine for the workflow to remove 3rd-party API dependency and give clients a more controlled, cost-efficient, and reliable automation layer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="mx-auto w-[min(92rem,calc(100%-2rem))] py-20">
+      <div class="reveal mb-12 max-w-3xl">
+        <p class="font-display text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">Experience</p>
+        <h2 class="mt-4 font-display text-4xl font-black tracking-tight text-white sm:text-5xl">Production timeline</h2>
+        <p class="mt-4 text-lg text-slate-400">A focused path through enterprise data engineering, cloud pipeline delivery, optimization, and automation.</p>
+      </div>
+
+      <div class="relative space-y-6 pl-6">
+        <div class="timeline-line absolute bottom-0 left-0 top-2 w-px"></div>
+
+        <article class="reveal glass relative rounded-[2rem] p-6 sm:p-8">
+          <span class="absolute -left-[1.95rem] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-cyan-300 shadow-lg shadow-cyan-300/40"></span>
+          <div class="grid gap-5 lg:grid-cols-[16rem_1fr]">
+            <div>
+              <p class="font-bold text-cyan-200">Oct 2025 - Present</p>
+              <h3 class="mt-2 font-display text-2xl font-black text-white">Data Engineer</h3>
+              <p class="text-slate-400">ADP</p>
+            </div>
+            <ul class="space-y-3 text-slate-300">
+              <li><i class="fa-solid fa-check mr-2 text-cyan-300"></i>Engineer enterprise data workflows focused on reliable processing, clean data movement, operational reporting, and downstream business visibility.</li>
+              <li><i class="fa-solid fa-check mr-2 text-cyan-300"></i>Apply automation-first data engineering practices across SQL, cloud data tooling, validation, and production support workflows.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal glass relative rounded-[2rem] p-6 sm:p-8">
+          <span class="absolute -left-[1.95rem] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-blue-300 shadow-lg shadow-blue-300/40"></span>
+          <div class="grid gap-5 lg:grid-cols-[16rem_1fr]">
+            <div>
+              <p class="font-bold text-cyan-200">May 2023 - Oct 2025</p>
+              <h3 class="mt-2 font-display text-2xl font-black text-white">Software Engineer</h3>
+              <p class="text-slate-400">Xcaliber Infotech</p>
+            </div>
+            <ul class="space-y-3 text-slate-300">
+              <li><i class="fa-solid fa-check mr-2 text-cyan-300"></i>Developed and optimized 30+ ETL pipelines using Azure Data Factory, SSIS, PySpark, Databricks, and Azure Data Lake for structured and unstructured data ingestion.</li>
+              <li><i class="fa-solid fa-check mr-2 text-cyan-300"></i>Improved processing efficiency by 30%, accelerated SQL retrieval by 40%, and automated 400K+ daily transaction validations with 99.9% accuracy.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal glass relative rounded-[2rem] p-6 sm:p-8">
+          <span class="absolute -left-[1.95rem] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-violet-300 shadow-lg shadow-violet-300/40"></span>
+          <div class="grid gap-5 lg:grid-cols-[16rem_1fr]">
+            <div>
+              <p class="font-bold text-cyan-200">Jan 2021 - Apr 2022</p>
+              <h3 class="mt-2 font-display text-2xl font-black text-white">SQL Data Associate</h3>
+              <p class="text-slate-400">thyssenkrupp</p>
+            </div>
+            <ul class="space-y-3 text-slate-300">
+              <li><i class="fa-solid fa-check mr-2 text-cyan-300"></i>Worked on SQL-based data operations, query handling, structured reporting support, and business data validation for operational teams.</li>
+              <li><i class="fa-solid fa-check mr-2 text-cyan-300"></i>Built a strong foundation in production data accuracy, documentation discipline, and stakeholder-focused reporting workflows.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="mx-auto w-[min(92rem,calc(100%-2rem))] py-20">
+      <div class="reveal mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div class="max-w-3xl">
+          <p class="font-display text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">Featured projects</p>
+          <h2 class="mt-4 font-display text-4xl font-black tracking-tight text-white sm:text-5xl">Work that proves delivery</h2>
+        </div>
+        <p class="max-w-xl text-lg text-slate-400">Project cards combine the problem, build approach, technology, and measurable result, so freelance clients can quickly understand business value.</p>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-2">
+        <article class="reveal premium-border glass rounded-[2rem] p-5">
+          <div class="project-visual relative mb-6 grid h-56 place-items-center overflow-hidden rounded-3xl">
+            <i class="fa-solid fa-newspaper text-6xl text-cyan-100"></i>
+          </div>
+          <div class="p-2">
+            <div class="mb-4 inline-flex rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Freelance flagship</div>
+            <h3 class="font-display text-3xl font-black text-white">Intelligent News Automation System</h3>
+            <p class="mt-4 text-slate-300">Automated a client’s manual news search process. The system delivers daily latest news automatically and is evolving toward a custom search engine to eliminate 3rd-party API dependency.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Python</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Automation</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Search Engine</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">AI Summaries</span>
+            </div>
+            <p class="mt-5 font-bold text-cyan-200">Result: Less manual effort, daily delivery, lower dependency risk.</p>
+          </div>
+        </article>
+
+        <article class="reveal glass rounded-[2rem] p-5">
+          <div class="project-visual relative mb-6 grid h-56 place-items-center overflow-hidden rounded-3xl">
+            <i class="fa-solid fa-diagram-project text-6xl text-blue-100"></i>
+          </div>
+          <div class="p-2">
+            <h3 class="font-display text-3xl font-black text-white">Enterprise ETL Pipeline Modernization</h3>
+            <p class="mt-4 text-slate-300">Built and optimized Azure Data Factory and SSIS pipelines for structured and unstructured data ingestion into Azure Data Lake.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">ADF</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">SSIS</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">ADLS</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">ETL</span>
+            </div>
+            <p class="mt-5 font-bold text-cyan-200">Result: 30+ ETL pipelines delivered and optimized.</p>
+          </div>
+        </article>
+
+        <article class="reveal glass rounded-[2rem] p-5">
+          <div class="project-visual relative mb-6 grid h-56 place-items-center overflow-hidden rounded-3xl">
+            <i class="fa-solid fa-route text-6xl text-cyan-100"></i>
+          </div>
+          <div class="p-2">
+            <h3 class="font-display text-3xl font-black text-white">Data Lineage & Validation Dashboard</h3>
+            <p class="mt-4 text-slate-300">Automated daily file validation for high-volume transactions and built lineage visibility to reduce investigation time.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Azure Data Lake</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Power BI</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Validation</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Lineage</span>
+            </div>
+            <p class="mt-5 font-bold text-cyan-200">Result: 400K+ daily transactions, 99.9% accuracy, 60% faster investigations.</p>
+          </div>
+        </article>
+
+        <article class="reveal glass rounded-[2rem] p-5">
+          <div class="project-visual relative mb-6 grid h-56 place-items-center overflow-hidden rounded-3xl">
+            <i class="fa-solid fa-gauge-high text-6xl text-blue-100"></i>
+          </div>
+          <div class="p-2">
+            <h3 class="font-display text-3xl font-black text-white">PySpark & SQL Performance Optimization</h3>
+            <p class="mt-4 text-slate-300">Optimized Databricks PySpark workflows and Azure SQL queries using partitioning, indexing, and workflow tuning.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">PySpark</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Databricks</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Azure SQL</span>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Delta Lake</span>
+            </div>
+            <p class="mt-5 font-bold text-cyan-200">Result: 30% better processing efficiency and 40% faster data retrieval.</p>
+          </div>
+        </article>
+
+        <article class="reveal glass rounded-[2rem] p-5 lg:col-span-2">
+          <div class="grid gap-6 lg:grid-cols-[.75fr_1fr]">
+            <div class="project-visual relative grid min-h-64 place-items-center overflow-hidden rounded-3xl">
+              <i class="fa-solid fa-cloud-bolt text-6xl text-cyan-100"></i>
+            </div>
+            <div class="p-2 lg:p-4">
+              <h3 class="font-display text-3xl font-black text-white">Cloud Automation with Azure Functions</h3>
+              <p class="mt-4 text-slate-300">Automated cloud-based data solutions using Azure Functions and Python, reducing manual operations and improving pipeline reliability.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Azure Functions</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Python</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Automation</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Monitoring</span>
+              </div>
+              <p class="mt-5 font-bold text-cyan-200">Result: 30% improvement in pipeline reliability and 40% faster report generation workflows.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="mx-auto w-[min(92rem,calc(100%-2rem))] py-20">
+      <div class="reveal mb-12 max-w-3xl">
+        <p class="font-display text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">Skills</p>
+        <h2 class="mt-4 font-display text-4xl font-black tracking-tight text-white sm:text-5xl">A practical stack for reliable data products</h2>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div class="reveal glass rounded-[2rem] p-6">
+          <i class="fa-solid fa-cloud text-3xl text-cyan-300"></i>
+          <h3 class="mt-5 font-display text-2xl font-black text-white">Cloud Data</h3>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">Azure Data Factory</span>
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">Azure Databricks</span>
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">Azure Data Lake</span>
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">Azure Functions</span>
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">AWS</span>
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">S3</span>
+          </div>
+        </div>
+        <div class="reveal glass rounded-[2rem] p-6">
+          <i class="fa-solid fa-code text-3xl text-blue-300"></i>
+          <h3 class="mt-5 font-display text-2xl font-black text-white">Engineering</h3>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">Python</span>
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">Spark</span>
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">PySpark</span>
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">SQL</span>
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">SSIS</span>
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">Shell Scripting</span>
+          </div>
+        </div>
+        <div class="reveal glass rounded-[2rem] p-6">
+          <i class="fa-solid fa-warehouse text-3xl text-cyan-300"></i>
+          <h3 class="mt-5 font-display text-2xl font-black text-white">Data Platforms</h3>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">ETL/ELT</span>
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">Data Warehousing</span>
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">Snowflake</span>
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">Databricks</span>
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">Delta Lake</span>
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">SQL Server</span>
+            <span class="rounded-full bg-cyan-300/10 px-3 py-1 text-sm font-bold text-cyan-100">CI/CD</span>
+          </div>
+        </div>
+        <div class="reveal glass rounded-[2rem] p-6">
+          <i class="fa-solid fa-wand-magic-sparkles text-3xl text-blue-300"></i>
+          <h3 class="mt-5 font-display text-2xl font-black text-white">Automation</h3>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">Custom Search</span>
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">News Automation</span>
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">APIs</span>
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">Dashboards</span>
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">Power BI</span>
+            <span class="rounded-full bg-blue-300/10 px-3 py-1 text-sm font-bold text-blue-100">Monitoring</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto w-[min(92rem,calc(100%-2rem))] py-20">
+      <div class="reveal grid gap-6 lg:grid-cols-[.8fr_1.2fr]">
+        <div>
+          <p class="font-display text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">Certifications</p>
+          <h2 class="mt-4 font-display text-4xl font-black tracking-tight text-white sm:text-5xl">Proof of continuous practice</h2>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <a href="https://credentials.databricks.com/756047e6-b5f5-4da8-a4ee-b8bb5002fd8d#acc.fln6ABYk" target="_blank" rel="noreferrer" class="glass rounded-3xl p-5 transition hover:-translate-y-1 hover:border-cyan-300/40">
+            <i class="fa-solid fa-certificate text-cyan-300"></i>
+            <p class="mt-4 font-display text-xl font-black text-white">Databricks Lakehouse Fundamentals</p>
           </a>
-          <a href="https://www.hackerrank.com/mahikolhe23" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="HackerRank" aria-label="HackerRank Profile">
-            <i class="fab fa-hackerrank"></i>
+          <a href="https://www.hackerrank.com/certificates/iframe/dc205a0b6a30" target="_blank" rel="noreferrer" class="glass rounded-3xl p-5 transition hover:-translate-y-1 hover:border-cyan-300/40">
+            <i class="fa-solid fa-database text-blue-300"></i>
+            <p class="mt-4 font-display text-xl font-black text-white">HackerRank SQL</p>
           </a>
-          <a href="https://www.kaggle.com/mahendrakolhe" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="Kaggle" aria-label="Kaggle Profile">
-            <i class="fab fa-kaggle"></i>
+          <a href="https://www.hackerrank.com/certificates/iframe/729d718db0db" target="_blank" rel="noreferrer" class="glass rounded-3xl p-5 transition hover:-translate-y-1 hover:border-cyan-300/40">
+            <i class="fa-brands fa-python text-cyan-300"></i>
+            <p class="mt-4 font-display text-xl font-black text-white">HackerRank Python</p>
           </a>
-          <a href="https://www.geeksforgeeks.org/user/mkolhe23/" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="GeeksforGeeks" aria-label="GeeksforGeeks Profile">
-            <i class="fas fa-laptop-code"></i>
-          </a>
-          <a href="https://stackoverflow.com/users/20132615/mahi" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="Stack Overflow" aria-label="Stack Overflow Profile">
-            <i class="fab fa-stack-overflow"></i>
-          </a>
-          <a href="https://medium.com/@mkolhe23" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="Medium" aria-label="Medium Profile">
-            <i class="fab fa-medium"></i>
-          </a>
-          <a href="https://github.com/Mahikolhe23" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="GitHub" aria-label="GitHub Profile">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.datacamp.com/portfolio/mkolhe23" target="_blank" class="text-xl md:text-2xl hover:text-blue-400 transition" title="DataCamp" aria-label="DataCamp Profile">
-            <i class="fas fa-laptop-code"></i>
+          <a href="https://leetcode.com/u/Mahikolhe/" target="_blank" rel="noreferrer" class="glass rounded-3xl p-5 transition hover:-translate-y-1 hover:border-cyan-300/40">
+            <i class="fa-solid fa-code text-blue-300"></i>
+            <p class="mt-4 font-display text-xl font-black text-white">LeetCode</p>
           </a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Skills and Certifications -->
-    <div class="md:col-span-5 bg-gray-800 rounded-lg p-3 flex flex-col items-center text-center text-sm">
-      <h2 class="text-base md:text-lg font-bold mb-1">Skills & Certifications</h2>
-      <div class="flex flex-col gap-1">
-        <div class="flex gap-1 flex-wrap justify-center">
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Python</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">SQL</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">PySpark</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Azure</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Databricks</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Airflow</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Azure Data Factory</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">SSIS</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Azure Functions</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Power BI</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Delta Lake</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Pandas</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">SQLAlchemy</span>
-          <span class="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">Azure Data Studio</span>
+    <section id="contact" class="mx-auto w-[min(92rem,calc(100%-2rem))] py-20">
+      <div class="reveal premium-border glass overflow-hidden rounded-[2.25rem]">
+        <div class="grid gap-0 lg:grid-cols-[.95fr_1.05fr]">
+          <div class="bg-gradient-to-br from-cyan-300/15 via-blue-500/10 to-violet-500/10 p-8 sm:p-10 lg:p-12">
+            <p class="font-display text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">Freelance contact</p>
+            <h2 class="mt-5 font-display text-4xl font-black tracking-tight text-white sm:text-5xl">Need a data pipeline or automation system that just works?</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-300">I help clients build custom data pipelines, search automation, reporting workflows, ETL systems, and AI-assisted data solutions without unnecessary platform complexity.</p>
+            <div class="mt-8 space-y-4">
+              <a href="mailto:mkolhe23@gmail.com" class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 font-bold text-white transition hover:bg-white/10">
+                <i class="fa-solid fa-envelope text-cyan-300"></i>
+                mkolhe23@gmail.com
+              </a>
+              <a href="tel:+917350458043" class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 font-bold text-white transition hover:bg-white/10">
+                <i class="fa-solid fa-phone text-cyan-300"></i>
+                7350458043
+              </a>
+              <a href="https://www.linkedin.com/in/mahikolhe/" target="_blank" rel="noreferrer" class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 font-bold text-white transition hover:bg-white/10">
+                <i class="fa-brands fa-linkedin text-cyan-300"></i>
+                LinkedIn
+              </a>
+              <a href="https://github.com/Mahikolhe23" target="_blank" rel="noreferrer" class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 font-bold text-white transition hover:bg-white/10">
+                <i class="fa-brands fa-github text-cyan-300"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <form id="leadForm" action="YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL" method="POST" class="p-8 sm:p-10 lg:p-12">
+            <p class="mb-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm font-semibold text-cyan-100">Google Sheets-ready enquiry form. Replace the action URL with your Google Apps Script Web App URL to save every lead into a sheet.</p>
+            <input type="hidden" name="source" value="Portfolio Website" />
+            <input type="hidden" name="submittedAt" id="submittedAt" />
+            <div class="grid gap-5 sm:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-bold text-slate-300">Name</span>
+                <input name="name" required class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60" placeholder="Your name" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-bold text-slate-300">Email</span>
+                <input type="email" name="email" required class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60" placeholder="you@example.com" />
+              </label>
+            </div>
+            <label class="mt-5 block">
+              <span class="mb-2 block text-sm font-bold text-slate-300">Project type</span>
+              <input name="project" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60" placeholder="Data pipeline, dashboard, automation..." />
+            </label>
+            <label class="mt-5 block">
+              <span class="mb-2 block text-sm font-bold text-slate-300">Message</span>
+              <textarea name="message" rows="5" required class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60" placeholder="Tell me what you want to automate or build."></textarea>
+            </label>
+            <button class="shine mt-6 w-full rounded-2xl bg-gradient-to-r from-cyan-300 to-blue-400 px-6 py-4 font-black text-slate-950 shadow-xl shadow-cyan-500/20 transition hover:-translate-y-1" type="submit">
+              Send Project Inquiry
+            </button>
+            <p id="formStatus" class="mt-4 hidden rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-4 text-sm font-bold text-emerald-200"></p>
+          </form>
         </div>
-        <div class="flex gap-1 flex-wrap justify-center">
-          <a href="https://www.hackerrank.com/certificates/iframe/729d718db0db" target="_blank" class="bg-green-500 text-white px-2 py-0.5 rounded text-xs hover:bg-green-600" aria-label="HackerRank Python Certificate">HackerRank Python</a>
-          <a href="https://www.hackerrank.com/certificates/iframe/dc205a0b6a30" target="_blank" class="bg-green-500 text-white px-2 py-0.5 rounded text-xs hover:bg-green-600" aria-label="HackerRank SQL Certificate">HackerRank SQL</a>
-          <a href="https://www.udemy.com/certificate/UC-0e850b38-94f3-44f3-8e42-775bc8a01ef1/" target="_blank" class="bg-green-500 text-white px-2 py-0.5 rounded text-xs hover:bg-green-600" aria-label="Udemy SQL Certificate">Udemy SQL</a>
-          <a href="https://www.udemy.com/certificate/UC-585cc17e-7c80-4d8c-9c98-7a31dc6df0d1/" target="_blank" class="bg-green-500 text-white px-2 py-0.5 rounded text-xs hover:bg-green-600" aria-label="Azure Databricks Certificate">Azure Databricks & Spark</a>
-          <a href="https://credentials.databricks.com/756047e6-b5f5-4da8-a4ee-b8bb5002fd8d#acc.fln6ABYk" target="_blank" class="bg-green-500 text-white px-2 py-0.5 rounded text-xs hover:bg-green-600" aria-label="Databricks Fundamentals">Databricks Fundamentals</a>
-        </div>
       </div>
-      <p class="text-xs mt-1 text-gray-300">🔥 Now exploring: Airflow for orchestration</p>
-    </div>
+    </section>
+  </main>
 
-    <!-- Modals for Experience -->
-    <div id="xcaliber-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('xcaliber-modal')" aria-label="Close Modal">&times;</span>
-        <h3 class="text-lg font-bold mb-1">Xcaliber Infotech | Data Engineer</h3>
-        <p class="text-xs text-gray-300">May 2023–Present</p>
-        <p class="text-xs text-gray-300">Tech consultancy delivering cloud-based data solutions</p>
-        <ul class="list-disc pl-4 text-xs mt-1">
-          <li>Developed and optimized 30+ ETL pipelines using Azure Data Factory and SSIS, integrating structured and unstructured data into Azure Data Lake.</li>
-          <li>Improved data processing efficiency by 30% through PySpark-based workflows in Azure Databricks.</li>
-          <li>Optimized SQL queries, achieving 40% faster data retrieval via indexing and partitioning in Azure SQL Database.</li>
-          <li>Automated cloud-based data solutions using Azure Functions and Python, improving pipeline reliability by 30%.</li>
-          <li>Collaborated with cross-functional teams to translate business requirements into efficient data solutions, improving report generation speed by 40%.</li>
-          <li>Automated file validation for 400K+ daily transactions in Azure Data Lake, achieving 99.9% accuracy and reducing investigation time by 60% with a data lineage dashboard.</li>
-        </ul>
-        <p class="text-xs text-gray-300 mt-1">Tech Stack: Azure Data Factory, Databricks, Power BI, Azure Functions, SSIS, Azure SQL Database</p>
+  <footer class="border-t border-white/10 py-10">
+    <div class="mx-auto flex w-[min(92rem,calc(100%-2rem))] flex-col gap-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <p>© 2026 Mahendra Kolhe. Built for GitHub Pages.</p>
+      <div class="flex flex-wrap gap-4">
+        <a class="hover:text-cyan-300" href="mailto:mkolhe23@gmail.com">Email</a>
+        <a class="hover:text-cyan-300" href="tel:+917350458043">Phone</a>
+        <a class="hover:text-cyan-300" href="https://www.linkedin.com/in/mahikolhe/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="hover:text-cyan-300" href="https://github.com/Mahikolhe23" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </div>
-    <div id="teamlease-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('teamlease-modal')" aria-label="Close Modal">&times;</span>
-        <h3 class="text-lg font-bold mb-1">TeamLease Services Ltd | Associate – Data Engineering</h3>
-        <p class="text-xs text-gray-300">Jan 2021–Feb 2022</p>
-        <p class="text-xs text-gray-300">HR solutions provider with data-driven operations</p>
-        <ul class="list-disc pl-4 text-xs mt-1">
-          <li>Developed and maintained SSIS-based ETL pipelines and SQL Server workflows, automating data ingestion from multiple sources.</li>
-          <li>Optimized SQL queries and implemented indexing strategies to enhance data processing performance and ensure high system uptime.</li>
-        </ul>
-        <p class="text-xs text-gray-300 mt-1">Tech Stack: SSIS, SQL Server</p>
-      </div>
-    </div>
-
-    <!-- Modals for Projects -->
-    <div id="netflix-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('netflix-modal')" aria-label="Close Modal">&times;</span>
-        <h3 class="text-lg font-bold mb-1">Netflix Data Pipeline</h3>
-        <p class="text-xs text-gray-300">Designed to process and analyze Netflix data using Azure services, ingesting raw CSV data from GitHub through Bronze, Silver, and Gold layers for structured transformation.</p>
-        <ul class="list-disc pl-4 text-xs mt-1">
-          <li>Orchestrated data movement with Azure Data Factory for seamless ingestion.</li>
-          <li>Optimized data storage and processing using Databricks and Delta Lake.</li>
-          <li>Enabled real-time analysis and reporting with Synapse Analytics and Power BI.</li>
-        </ul>
-        <p class="text-xs text-gray-300 mt-1">Tech Stack: Azure Data Lake Storage, Azure Data Factory, Azure Databricks, Unity Catalog, Delta Lake, Azure Synapse Analytics, Power BI</p>
-      </div>
-    </div>
-    <div id="airport-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('airport-modal')" aria-label="Close Modal">&times;</span>
-        <h3 class="text-lg font-bold mb-1">Airport Design Pipeline</h3>
-        <p class="text-xs text-gray-300">Ingests, processes, and stores airport-related data from APIs and CSV files for analytics and reporting.</p>
-        <ul class="list-disc pl-4 text-xs mt-1">
-          <li>Fetched and transformed raw data using ETL scripts for efficient processing.</li>
-          <li>Loaded structured data into SQL Server for downstream analytics.</li>
-          <li>Managed database connections with SQLAlchemy and ODBC Driver 18.</li>
-        </ul>
-        <p class="text-xs text-gray-300 mt-1">Tech Stack: Python, Pandas, SQL Server, SQLAlchemy, ODBC Driver 18, Azure Data Studio</p>
-      </div>
-    </div>
-    <div id="wallet-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('wallet-modal')" aria-label="Close Modal">&times;</span>
-        <h3 class="text-lg font-bold mb-1">Wallet Watcher</h3>
-        <p class="text-xs text-gray-300">A personal finance data extractor that fetches transaction-related emails, parses financial details, and sends daily expense summaries.</p>
-        <ul class="list-disc pl-4 text-xs mt-1">
-          <li>Fetched transaction data from Gmail inbox and parsed credit/debit amounts.</li>
-          <li>Stored data in structured DataFrames for analysis.</li>
-          <li>Delivered daily expense summaries via email with plans for WhatsApp integration.</li>
-        </ul>
-        <p class="text-xs text-gray-300 mt-1">Tech Stack: Python, Pandas, WhatsApp API, Gmail API</p>
-      </div>
-    </div>
-    <div id="formula1-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('formula1-modal')" aria-label="Close Modal">&times;</span>
-        <h3 class="text-lg font-bold mb-1">Formula1 Pipeline</h3>
-        <p class="text-xs text-gray-300">An end-to-end analytics pipeline for Formula 1 race data, built with Medallion Architecture for real-time insights.</p>
-        <ul class="list-disc pl-4 text-xs mt-1">
-          <li>Orchestrated pipeline with Azure Data Factory for high reliability.</li>
-          <li>Cleaned and transformed data using PySpark in Azure Databricks.</li>
-          <li>Stored raw and processed data in ADLS Gen2 with Delta Lake for versioning.</li>
-        </ul>
-        <p class="text-xs text-gray-300 mt-1">Tech Stack: Azure Data Factory, ADLS Gen2, Azure Databricks, Delta Lake, PySpark</p>
-      </div>
-    </div>
-  </div>
+  </footer>
 
   <script>
-    // Add fade-in effect on load
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelector('.fade-in').style.opacity = '1';
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuButton?.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+      menuButton.innerHTML = isOpen ? '<i class="fa-solid fa-bars"></i>' : '<i class="fa-solid fa-xmark"></i>';
+      mobileMenu.classList.toggle("hidden", isOpen);
     });
 
-    // Modal functions
-    function openModal(modalId) {
-      document.getElementById(modalId).style.display = 'block';
-      document.getElementById(modalId).focus();
+    mobileMenu?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+        menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+    const words = [
+      "Data Engineer",
+      "Spark & SQL Engineer",
+      "Databricks Builder",
+      "Snowflake Ready",
+      "Cloud Data Specialist",
+      "Pipeline Builder",
+      "Automation Specialist",
+      "Freelance Data Solutions Partner"
+    ];
+    const animatedText = document.getElementById("animatedText");
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeLoop() {
+      const word = words[wordIndex];
+      animatedText.textContent = deleting ? word.slice(0, charIndex--) : word.slice(0, charIndex++);
+
+      if (!deleting && charIndex > word.length + 8) deleting = true;
+      if (deleting && charIndex < 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+
+      setTimeout(typeLoop, deleting ? 42 : 74);
+    }
+    typeLoop();
+
+    function monthDiffInclusive(startDate, endDate) {
+      return (endDate.getFullYear() - startDate.getFullYear()) * 12 + endDate.getMonth() - startDate.getMonth() + 1;
     }
 
-    function closeModal(modalId) {
-      document.getElementById(modalId).style.display = 'none';
+    const priorDocumentedMonths = 46; // thyssenkrupp 1y4m + Xcaliber 2y6m
+    const adpMonths = monthDiffInclusive(new Date(2025, 9, 1), new Date());
+    const totalMonths = priorDocumentedMonths + Math.max(0, adpMonths);
+    const halfYearExperience = Math.floor(totalMonths / 6) / 2;
+    const totalExperience = document.getElementById("totalExperience");
+    if (totalExperience) {
+      totalExperience.textContent = `${halfYearExperience.toFixed(1)}+`;
     }
 
-    // Add hover effect to cards
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        card.style.transform = 'scale(1.03)';
-        card.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'scale(1)';
-        card.style.boxShadow = 'none';
-      });
+    const leadForm = document.getElementById("leadForm");
+    const formStatus = document.getElementById("formStatus");
+    const submittedAt = document.getElementById("submittedAt");
+    leadForm?.addEventListener("submit", async (event) => {
+      submittedAt.value = new Date().toISOString();
+      if (leadForm.action.includes("YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL")) {
+        event.preventDefault();
+        formStatus.textContent = "Form is ready for Google Sheets. Add your Google Apps Script Web App URL in the form action to start capturing enquiries.";
+        formStatus.classList.remove("hidden");
+        return;
+      }
+      event.preventDefault();
+      try {
+        await fetch(leadForm.action, {
+          method: "POST",
+          mode: "no-cors",
+          body: new FormData(leadForm)
+        });
+        leadForm.reset();
+        formStatus.textContent = "Thanks. Your enquiry has been captured.";
+        formStatus.classList.remove("hidden");
+      } catch (error) {
+        formStatus.textContent = "Something went wrong. Please email me directly at mkolhe23@gmail.com.";
+        formStatus.classList.remove("hidden");
+      }
     });
 
-    // Close modals when clicking outside
-    document.querySelectorAll('.modal').forEach(modal => {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
       });
-    });
+    }, { threshold: 0.12 });
 
-    // Keyboard navigation for accessibility
-    document.querySelectorAll('.modal').forEach(modal => {
-      modal.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          modal.style.display = 'none';
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    const canvas = document.getElementById("network");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth * window.devicePixelRatio;
+      canvas.height = window.innerHeight * window.devicePixelRatio;
+      ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+      const count = Math.min(90, Math.max(32, Math.floor(window.innerWidth / 18)));
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        vx: (Math.random() - 0.5) * 0.38,
+        vy: (Math.random() - 0.5) * 0.38,
+        r: Math.random() * 1.8 + 0.8
+      }));
+    }
+
+    function drawNetwork() {
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      particles.forEach((p, i) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > window.innerWidth) p.vx *= -1;
+        if (p.y < 0 || p.y > window.innerHeight) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(103, 232, 249, 0.55)";
+        ctx.fill();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const q = particles[j];
+          const dx = p.x - q.x;
+          const dy = p.y - q.y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 120) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.strokeStyle = `rgba(59, 130, 246, ${0.18 * (1 - d / 120)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
         }
       });
-    });
+      requestAnimationFrame(drawNetwork);
+    }
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      resizeCanvas();
+      drawNetwork();
+      window.addEventListener("resize", resizeCanvas);
+    }
   </script>
 </body>
 </html>
