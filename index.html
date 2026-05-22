@@ -687,7 +687,6 @@
           </div>
 
           <form id="leadForm" action="YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL" method="POST" class="p-8 sm:p-10 lg:p-12">
-            <p class="mb-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm font-semibold text-cyan-100">Google Sheets-ready enquiry form. Replace the action URL with your Google Apps Script Web App URL to save every lead into a sheet.</p>
             <input type="hidden" name="source" value="Portfolio Website" />
             <input type="hidden" name="submittedAt" id="submittedAt" />
             <div class="grid gap-5 sm:grid-cols-2">
@@ -800,7 +799,7 @@
       submittedAt.value = new Date().toISOString();
       if (leadForm.action.includes("YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL")) {
         event.preventDefault();
-        formStatus.textContent = "Form is ready for Google Sheets. Add your Google Apps Script Web App URL in the form action to start capturing enquiries.";
+        formStatus.textContent = "Please email me directly at mkolhe23@gmail.com or call 7350458043 until the enquiry form is connected.";
         formStatus.classList.remove("hidden");
         return;
       }
