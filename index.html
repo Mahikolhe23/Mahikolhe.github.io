@@ -797,7 +797,7 @@
     const submittedAt = document.getElementById("submittedAt");
     leadForm?.addEventListener("submit", async (event) => {
       submittedAt.value = new Date().toISOString();
-      if (leadForm.action.includes("https://docs.google.com/spreadsheets/d/1IOr9CkDskfgyJ2rQe-H_cWWDm-qkaWsHIvNVup8ocPA/edit?gid=1718411009#gid=1718411009")) {
+      if (leadForm.action.includes("GOOGLE_SHEET_URL")) {
         event.preventDefault();
         formStatus.textContent = "Please email me directly at mkolhe23@gmail.com or call 7350458043 until the enquiry form is connected.";
         formStatus.classList.remove("hidden");
