@@ -9,10 +9,10 @@
   <meta name="author" content="Mahendra Kolhe" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#020617" />
-  <link rel="canonical" href="https://mahikolhe.github.io/" />
+  <link rel="canonical" href="https://mahikolhe23.github.io/Mahikolhe.github.io/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mahikolhe.github.io/" />
+  <meta property="og:url" content="https://mahikolhe23.github.io/Mahikolhe.github.io/" />
   <meta property="og:title" content="Mahendra Kolhe | Data Engineer" />
   <meta property="og:description" content="Premium data engineering, scalable pipelines, Spark, Databricks, Snowflake, SQL optimization, custom automation, and AI news automation solutions." />
   <meta property="og:site_name" content="Mahendra Kolhe Portfolio" />
@@ -228,7 +228,7 @@
         "@type": "Organization",
         "name": "ADP"
       },
-      "url": "https://mahikolhe.github.io/",
+      "url": "https://mahikolhe23.github.io/Mahikolhe.github.io/",
       "sameAs": [
         "https://www.linkedin.com/in/mahikolhe/",
         "https://github.com/Mahikolhe23",
@@ -759,11 +759,27 @@
                 GitHub
               </a>
             </div>
+            <div class="mt-8 grid gap-3 sm:grid-cols-3">
+              <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                <p class="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">Pipeline</p>
+                <p class="mt-2 text-sm font-semibold text-slate-300">Ingestion to warehouse</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                <p class="text-xs font-black uppercase tracking-[0.18em] text-blue-200">Automation</p>
+                <p class="mt-2 text-sm font-semibold text-slate-300">Manual workflow to system</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                <p class="text-xs font-black uppercase tracking-[0.18em] text-violet-200">Analytics</p>
+                <p class="mt-2 text-sm font-semibold text-slate-300">Clean metrics and alerts</p>
+              </div>
+            </div>
           </div>
 
-          <form id="leadForm" action="YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL" method="POST" class="p-8 sm:p-10 lg:p-12">
+          <form id="leadForm" action="https://script.google.com/macros/s/AKfycbzmlUxcVC2yh0oqQxf9XcTtA6xjkjJUA6-JzkjaD48Z_A-lnbtO4JWWrmywqsLnk_bcPw/exec" method="POST" class="p-8 sm:p-10 lg:p-12">
             <input type="hidden" name="source" value="Portfolio Website" />
             <input type="hidden" name="submittedAt" id="submittedAt" />
+            <input type="hidden" name="pageUrl" id="pageUrl" />
+            <input type="hidden" name="referrer" id="referrer" />
             <div class="grid gap-5 sm:grid-cols-2">
               <label class="block">
                 <span class="mb-2 block text-sm font-bold text-slate-300">Name</span>
@@ -776,13 +792,56 @@
             </div>
             <label class="mt-5 block">
               <span class="mb-2 block text-sm font-bold text-slate-300">Topic</span>
-              <input name="project" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60" placeholder="Data engineering, automation, analytics..." />
+              <select name="project" required class="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-4 text-white outline-none transition focus:border-cyan-300/60">
+                <option value="">Choose a data topic</option>
+                <option>Data pipeline / ETL workflow</option>
+                <option>Databricks / Spark optimization</option>
+                <option>SQL / warehouse modeling</option>
+                <option>Dashboard / reporting system</option>
+                <option>Automation / scheduled workflow</option>
+                <option>Not sure yet</option>
+              </select>
             </label>
+            <div class="mt-5">
+              <p class="mb-3 text-sm font-bold text-slate-300">Data problem signals</p>
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm font-semibold text-slate-300 transition hover:border-cyan-300/35 hover:bg-cyan-300/10">
+                  <input type="checkbox" name="signals" value="Manual reporting" class="h-4 w-4 rounded border-white/20 bg-slate-950 text-cyan-300 focus:ring-cyan-300" />
+                  Manual reporting
+                </label>
+                <label class="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm font-semibold text-slate-300 transition hover:border-cyan-300/35 hover:bg-cyan-300/10">
+                  <input type="checkbox" name="signals" value="Slow SQL or Spark jobs" class="h-4 w-4 rounded border-white/20 bg-slate-950 text-cyan-300 focus:ring-cyan-300" />
+                  Slow SQL or Spark jobs
+                </label>
+                <label class="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm font-semibold text-slate-300 transition hover:border-cyan-300/35 hover:bg-cyan-300/10">
+                  <input type="checkbox" name="signals" value="Data quality gaps" class="h-4 w-4 rounded border-white/20 bg-slate-950 text-cyan-300 focus:ring-cyan-300" />
+                  Data quality gaps
+                </label>
+                <label class="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm font-semibold text-slate-300 transition hover:border-cyan-300/35 hover:bg-cyan-300/10">
+                  <input type="checkbox" name="signals" value="Unreliable pipeline refresh" class="h-4 w-4 rounded border-white/20 bg-slate-950 text-cyan-300 focus:ring-cyan-300" />
+                  Unreliable pipeline refresh
+                </label>
+              </div>
+            </div>
             <label class="mt-5 block">
-              <span class="mb-2 block text-sm font-bold text-slate-300">Message</span>
-              <textarea name="message" rows="5" required class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60" placeholder="Share a short note."></textarea>
+              <span class="mb-2 block text-sm font-bold text-slate-300">What should improve?</span>
+              <textarea name="message" rows="5" required class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60" placeholder="Example: daily manual report, slow SQL, messy files, dashboard refresh, API data pull..."></textarea>
             </label>
-            <button class="shine mt-6 w-full rounded-2xl bg-gradient-to-r from-cyan-300 to-blue-400 px-6 py-4 font-black text-slate-950 shadow-xl shadow-cyan-500/20 transition hover:-translate-y-1" type="submit">
+            <div class="mt-5 grid gap-3 sm:grid-cols-3">
+              <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-3 text-center">
+                <p class="text-xs font-black uppercase tracking-[0.16em] text-slate-500">Signal</p>
+                <p class="mt-1 text-sm font-bold text-slate-300">Problem first</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-3 text-center">
+                <p class="text-xs font-black uppercase tracking-[0.16em] text-slate-500">Focus</p>
+                <p class="mt-1 text-sm font-bold text-slate-300">Data outcome</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-3 text-center">
+                <p class="text-xs font-black uppercase tracking-[0.16em] text-slate-500">Reply</p>
+                <p class="mt-1 text-sm font-bold text-slate-300">Direct email</p>
+              </div>
+            </div>
+            <button id="submitLead" class="shine mt-6 w-full rounded-2xl bg-gradient-to-r from-cyan-300 to-blue-400 px-6 py-4 font-black text-slate-950 shadow-xl shadow-cyan-500/20 transition hover:-translate-y-1 disabled:cursor-not-allowed disabled:opacity-70" type="submit">
               Send Message
             </button>
             <p id="formStatus" class="mt-4 hidden rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-4 text-sm font-bold text-emerald-200"></p>
@@ -870,15 +929,16 @@
     const leadForm = document.getElementById("leadForm");
     const formStatus = document.getElementById("formStatus");
     const submittedAt = document.getElementById("submittedAt");
+    const pageUrl = document.getElementById("pageUrl");
+    const referrer = document.getElementById("referrer");
+    const submitLead = document.getElementById("submitLead");
     leadForm?.addEventListener("submit", async (event) => {
       submittedAt.value = new Date().toISOString();
-      if (leadForm.action.includes("YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL")) {
-        event.preventDefault();
-        formStatus.textContent = "Please email me directly at mkolhe23@gmail.com or call 7350458043 until the enquiry form is connected.";
-        formStatus.classList.remove("hidden");
-        return;
-      }
+      pageUrl.value = window.location.href;
+      referrer.value = document.referrer || "Direct";
       event.preventDefault();
+      submitLead.disabled = true;
+      submitLead.textContent = "Sending...";
       try {
         await fetch(leadForm.action, {
           method: "POST",
@@ -886,11 +946,14 @@
           body: new FormData(leadForm)
         });
         leadForm.reset();
-        formStatus.textContent = "Thanks. Your enquiry has been captured.";
+        formStatus.textContent = "Thanks. Your message has been captured.";
         formStatus.classList.remove("hidden");
       } catch (error) {
         formStatus.textContent = "Something went wrong. Please email me directly at mkolhe23@gmail.com.";
         formStatus.classList.remove("hidden");
+      } finally {
+        submitLead.disabled = false;
+        submitLead.textContent = "Send Message";
       }
     });
 
