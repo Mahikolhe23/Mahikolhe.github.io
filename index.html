@@ -272,6 +272,7 @@
 
       <div class="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 md:flex">
         <a class="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#about">About</a>
+        <a class="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#systems">Systems</a>
         <a class="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#experience">Experience</a>
         <a class="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#projects">Projects</a>
         <a class="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#skills">Skills</a>
@@ -283,6 +284,7 @@
 
     <div id="mobileMenu" class="mx-4 mb-4 hidden rounded-3xl border border-white/10 bg-slate-950/95 p-3 shadow-2xl shadow-black/40 md:hidden">
       <a class="block rounded-2xl px-4 py-3 font-semibold text-slate-300 hover:bg-white/10 hover:text-white" href="#about">About</a>
+      <a class="block rounded-2xl px-4 py-3 font-semibold text-slate-300 hover:bg-white/10 hover:text-white" href="#systems">Systems</a>
       <a class="block rounded-2xl px-4 py-3 font-semibold text-slate-300 hover:bg-white/10 hover:text-white" href="#experience">Experience</a>
       <a class="block rounded-2xl px-4 py-3 font-semibold text-slate-300 hover:bg-white/10 hover:text-white" href="#projects">Projects</a>
       <a class="block rounded-2xl px-4 py-3 font-semibold text-slate-300 hover:bg-white/10 hover:text-white" href="#skills">Skills</a>
@@ -312,7 +314,7 @@
           Data Engineer | Scalable Data Pipelines | Custom Automation Solutions
         </p>
         <p class="mt-5 max-w-3xl text-base leading-8 text-slate-400 sm:text-lg">
-          I build production-grade data pipelines, analytics workflows, and automation systems that help teams replace manual operations with reliable, measurable, and decision-ready solutions.
+          I turn scattered source systems into governed lakehouse pipelines, tuned SQL models, and decision-ready analytics workflows that feel reliable from ingestion to dashboard.
         </p>
 
         <div class="mt-9 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
@@ -385,13 +387,25 @@
             </div>
             <div class="rounded-3xl border border-white/10 bg-slate-950/70 p-5">
               <div class="mb-4 flex items-center justify-between">
-                <span class="text-sm font-bold text-slate-300">Automation workflow</span>
+                <span class="text-sm font-bold text-slate-300">Data product flow</span>
                 <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-black text-emerald-300">LIVE</span>
               </div>
-              <div class="space-y-3">
-                <div class="h-2 rounded-full bg-slate-800"><div class="h-2 w-[92%] rounded-full bg-gradient-to-r from-cyan-300 to-blue-400"></div></div>
-                <div class="h-2 rounded-full bg-slate-800"><div class="h-2 w-[78%] rounded-full bg-gradient-to-r from-blue-400 to-violet-400"></div></div>
-                <div class="h-2 rounded-full bg-slate-800"><div class="h-2 w-[86%] rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300"></div></div>
+              <div class="grid gap-3">
+                <div class="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3">
+                  <span class="grid h-9 w-9 place-items-center rounded-xl bg-cyan-300/10 text-cyan-200"><i class="fa-solid fa-plug"></i></span>
+                  <span class="text-sm font-bold text-slate-300">APIs · CSV · SQL sources</span>
+                  <span class="text-xs font-black text-emerald-300">INGEST</span>
+                </div>
+                <div class="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3">
+                  <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-300/10 text-blue-200"><i class="fa-solid fa-bolt"></i></span>
+                  <span class="text-sm font-bold text-slate-300">Spark · Databricks · SQL</span>
+                  <span class="text-xs font-black text-blue-200">MODEL</span>
+                </div>
+                <div class="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3">
+                  <span class="grid h-9 w-9 place-items-center rounded-xl bg-violet-300/10 text-violet-200"><i class="fa-solid fa-chart-line"></i></span>
+                  <span class="text-sm font-bold text-slate-300">Warehouse · BI · Alerts</span>
+                  <span class="text-xs font-black text-cyan-200">SERVE</span>
+                </div>
               </div>
             </div>
           </div>
@@ -413,6 +427,52 @@
             I also explore automation-focused data solutions. A current focus is an intelligent news automation system that replaces manual news search. I am also building a custom search engine for the workflow to reduce 3rd-party API dependency and improve control, cost efficiency, and reliability.
           </p>
         </div>
+      </div>
+    </section>
+
+    <section id="systems" class="mx-auto w-[min(92rem,calc(100%-2rem))] py-20">
+      <div class="reveal mb-10 max-w-4xl">
+        <p class="font-display text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">Data systems</p>
+        <h2 class="mt-4 font-display text-4xl font-black tracking-tight text-white sm:text-5xl">What I can turn into a working data product</h2>
+        <p class="mt-5 text-lg leading-8 text-slate-400">A portfolio should feel like the work itself. These are the core systems I design: clear inputs, dependable processing, measurable quality, and outputs people can actually use.</p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+        <article class="reveal glass rounded-[2rem] p-6 transition hover:-translate-y-1 hover:border-cyan-300/40">
+          <div class="grid h-12 w-12 place-items-center rounded-2xl bg-cyan-300/10 text-cyan-200">
+            <i class="fa-solid fa-cloud-arrow-down"></i>
+          </div>
+          <h3 class="mt-5 font-display text-xl font-black text-white">Ingestion</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-400">API, CSV, SQL, email, and operational source ingestion with repeatable load patterns.</p>
+        </article>
+        <article class="reveal glass rounded-[2rem] p-6 transition hover:-translate-y-1 hover:border-blue-300/40">
+          <div class="grid h-12 w-12 place-items-center rounded-2xl bg-blue-300/10 text-blue-200">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+          </div>
+          <h3 class="mt-5 font-display text-xl font-black text-white">Transformation</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-400">Spark, PySpark, Databricks, SQL, and medallion-style processing for clean datasets.</p>
+        </article>
+        <article class="reveal glass rounded-[2rem] p-6 transition hover:-translate-y-1 hover:border-cyan-300/40">
+          <div class="grid h-12 w-12 place-items-center rounded-2xl bg-cyan-300/10 text-cyan-200">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="mt-5 font-display text-xl font-black text-white">Validation</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-400">Quality checks, reconciliation, exception visibility, and lineage-first debugging.</p>
+        </article>
+        <article class="reveal glass rounded-[2rem] p-6 transition hover:-translate-y-1 hover:border-blue-300/40">
+          <div class="grid h-12 w-12 place-items-center rounded-2xl bg-blue-300/10 text-blue-200">
+            <i class="fa-solid fa-warehouse"></i>
+          </div>
+          <h3 class="mt-5 font-display text-xl font-black text-white">Warehousing</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-400">Snowflake, SQL Server, Delta Lake, dimensional models, and reporting-ready marts.</p>
+        </article>
+        <article class="reveal glass rounded-[2rem] p-6 transition hover:-translate-y-1 hover:border-cyan-300/40 md:col-span-2 xl:col-span-1">
+          <div class="grid h-12 w-12 place-items-center rounded-2xl bg-cyan-300/10 text-cyan-200">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <h3 class="mt-5 font-display text-xl font-black text-white">Automation</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-400">Scheduled jobs, search automation, summaries, alerts, and workflow orchestration.</p>
+        </article>
       </div>
     </section>
 
@@ -498,6 +558,9 @@
               <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">AI Summaries</span>
             </div>
             <p class="mt-5 font-bold text-cyan-200">Result: Less manual effort, daily delivery, lower dependency risk.</p>
+            <a href="https://github.com/Mahikolhe23/energy-infrastructure-pulse" target="_blank" rel="noreferrer" class="mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-black text-cyan-100 transition hover:bg-cyan-300/20">
+              View build <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
           </div>
         </article>
 
@@ -515,6 +578,9 @@
               <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">ETL</span>
             </div>
             <p class="mt-5 font-bold text-cyan-200">Result: 30+ ETL pipelines delivered and optimized.</p>
+            <a href="https://github.com/Mahikolhe23/Netflix-Data-Pipeline" target="_blank" rel="noreferrer" class="mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-black text-cyan-100 transition hover:bg-cyan-300/20">
+              View pipeline <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
           </div>
         </article>
 
@@ -532,6 +598,9 @@
               <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Lineage</span>
             </div>
             <p class="mt-5 font-bold text-cyan-200">Result: 400K+ daily transactions, 99.9% accuracy, 60% faster investigations.</p>
+            <a href="https://github.com/Mahikolhe23/Airport-Design-Pipeline" target="_blank" rel="noreferrer" class="mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-black text-cyan-100 transition hover:bg-cyan-300/20">
+              View data flow <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
           </div>
         </article>
 
@@ -549,6 +618,9 @@
               <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Delta Lake</span>
             </div>
             <p class="mt-5 font-bold text-cyan-200">Result: 30% better processing efficiency and 40% faster data retrieval.</p>
+            <a href="https://github.com/Mahikolhe23/formula1_pipeline" target="_blank" rel="noreferrer" class="mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-black text-cyan-100 transition hover:bg-cyan-300/20">
+              View Spark flow <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
           </div>
         </article>
 
@@ -567,6 +639,9 @@
                 <span class="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-slate-200">Monitoring</span>
               </div>
               <p class="mt-5 font-bold text-cyan-200">Result: 30% improvement in pipeline reliability and 40% faster report generation workflows.</p>
+              <a href="https://github.com/Mahikolhe23/study-notifier" target="_blank" rel="noreferrer" class="mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-black text-cyan-100 transition hover:bg-cyan-300/20">
+                View automation <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
             </div>
           </div>
         </article>
