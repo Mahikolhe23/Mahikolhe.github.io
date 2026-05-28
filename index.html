@@ -775,7 +775,7 @@
             </div>
           </div>
 
-          <form id="leadForm" action="https://script.google.com/macros/s/AKfycbzmlUxcVC2yh0oqQxf9XcTtA6xjkjJUA6-JzkjaD48Z_A-lnbtO4JWWrmywqsLnk_bcPw/exec" method="POST" class="p-8 sm:p-10 lg:p-12">
+          <form id="leadForm" action="https://script.google.com/macros/s/AKfycbzmlUxcVC2yh0oqQxf9XcTtA6xjkjJUA6-JzkjaD48Z_A-lnbtO4JWWrmywqsLnk_bcPw/exec" method="GET" class="p-8 sm:p-10 lg:p-12">
             <input type="hidden" name="source" value="Portfolio Website" />
             <input type="hidden" name="submittedAt" id="submittedAt" />
             <input type="hidden" name="pageUrl" id="pageUrl" />
@@ -934,11 +934,9 @@
       submitLead.textContent = "Sending...";
       const formPayload = new URLSearchParams(new FormData(leadForm));
       try {
-        await fetch(leadForm.action, {
-          method: "POST",
+        await fetch(`${leadForm.action}?${formPayload.toString()}`, {
+          method: "GET",
           mode: "no-cors",
-          headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-          body: formPayload
         });
         leadForm.reset();
         formStatus.textContent = "Thanks. Your message has been sent.";
