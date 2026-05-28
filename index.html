@@ -787,41 +787,8 @@
               </label>
               <label class="block">
                 <span class="mb-2 block text-sm font-bold text-slate-300">Email</span>
-                <input type="email" name="email" required class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60" placeholder="you@example.com" />
+                <input id="emailInput" type="email" name="email" required autocomplete="email" inputmode="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60" placeholder="you@example.com" />
               </label>
-            </div>
-            <label class="mt-5 block">
-              <span class="mb-2 block text-sm font-bold text-slate-300">Topic</span>
-              <select name="project" required class="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-4 text-white outline-none transition focus:border-cyan-300/60">
-                <option value="">Choose a data topic</option>
-                <option>Data pipeline / ETL workflow</option>
-                <option>Databricks / Spark optimization</option>
-                <option>SQL / warehouse modeling</option>
-                <option>Dashboard / reporting system</option>
-                <option>Automation / scheduled workflow</option>
-                <option>Not sure yet</option>
-              </select>
-            </label>
-            <div class="mt-5">
-              <p class="mb-3 text-sm font-bold text-slate-300">Data problem signals</p>
-              <div class="grid gap-3 sm:grid-cols-2">
-                <label class="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm font-semibold text-slate-300 transition hover:border-cyan-300/35 hover:bg-cyan-300/10">
-                  <input type="checkbox" name="signals" value="Manual reporting" class="h-4 w-4 rounded border-white/20 bg-slate-950 text-cyan-300 focus:ring-cyan-300" />
-                  Manual reporting
-                </label>
-                <label class="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm font-semibold text-slate-300 transition hover:border-cyan-300/35 hover:bg-cyan-300/10">
-                  <input type="checkbox" name="signals" value="Slow SQL or Spark jobs" class="h-4 w-4 rounded border-white/20 bg-slate-950 text-cyan-300 focus:ring-cyan-300" />
-                  Slow SQL or Spark jobs
-                </label>
-                <label class="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm font-semibold text-slate-300 transition hover:border-cyan-300/35 hover:bg-cyan-300/10">
-                  <input type="checkbox" name="signals" value="Data quality gaps" class="h-4 w-4 rounded border-white/20 bg-slate-950 text-cyan-300 focus:ring-cyan-300" />
-                  Data quality gaps
-                </label>
-                <label class="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm font-semibold text-slate-300 transition hover:border-cyan-300/35 hover:bg-cyan-300/10">
-                  <input type="checkbox" name="signals" value="Unreliable pipeline refresh" class="h-4 w-4 rounded border-white/20 bg-slate-950 text-cyan-300 focus:ring-cyan-300" />
-                  Unreliable pipeline refresh
-                </label>
-              </div>
             </div>
             <label class="mt-5 block">
               <span class="mb-2 block text-sm font-bold text-slate-300">What should improve?</span>
@@ -932,24 +899,54 @@
     const pageUrl = document.getElementById("pageUrl");
     const referrer = document.getElementById("referrer");
     const submitLead = document.getElementById("submitLead");
+    const emailInput = document.getElementById("emailInput");
+
+    function isValidEmail(value) {
+      const email = value.trim().toLowerCase();
+      const basicEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      const blockedDomains = ["example.com", "test.com", "mailinator.com", "tempmail.com", "10minutemail.com"];
+      const domain = email.split("@")[1] || "";
+      return basicEmail.test(email)
+        && email.length <= 254
+        && !email.includes("..")
+        && !domain.startsWith("-")
+        && !domain.endsWith("-")
+        && !blockedDomains.includes(domain);
+    }
+
+    emailInput?.addEventListener("input", () => {
+      emailInput.setCustomValidity(isValidEmail(emailInput.value) || emailInput.value === "" ? "" : "Please enter a real email address so I can reply.");
+    });
+
     leadForm?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!isValidEmail(emailInput.value)) {
+        emailInput.setCustomValidity("Please enter a real email address so I can reply.");
+        emailInput.reportValidity();
+        return;
+      }
+
+      emailInput.setCustomValidity("");
       submittedAt.value = new Date().toISOString();
       pageUrl.value = window.location.href;
       referrer.value = document.referrer || "Direct";
-      event.preventDefault();
       submitLead.disabled = true;
       submitLead.textContent = "Sending...";
+      const formPayload = new URLSearchParams(new FormData(leadForm));
       try {
         await fetch(leadForm.action, {
           method: "POST",
           mode: "no-cors",
-          body: new FormData(leadForm)
+          headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+          body: formPayload
         });
         leadForm.reset();
-        formStatus.textContent = "Thanks. Your message has been captured.";
+        formStatus.textContent = "Thanks. Your message has been sent.";
+        formStatus.className = "mt-4 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-4 text-sm font-bold text-emerald-200";
         formStatus.classList.remove("hidden");
       } catch (error) {
         formStatus.textContent = "Something went wrong. Please email me directly at mkolhe23@gmail.com.";
+        formStatus.className = "mt-4 rounded-2xl border border-rose-300/20 bg-rose-300/10 p-4 text-sm font-bold text-rose-200";
         formStatus.classList.remove("hidden");
       } finally {
         submitLead.disabled = false;
