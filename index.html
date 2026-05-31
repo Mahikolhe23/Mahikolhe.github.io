@@ -780,6 +780,11 @@
             <input type="hidden" name="submittedAt" id="submittedAt" />
             <input type="hidden" name="pageUrl" id="pageUrl" />
             <input type="hidden" name="referrer" id="referrer" />
+            <input type="hidden" name="inquiryType" id="inquiryType" value="Enquiry Only" />
+            <label class="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+              Leave this field empty
+              <input id="websiteField" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </label>
             <div class="grid gap-5 sm:grid-cols-2">
               <label class="block">
                 <span class="mb-2 block text-sm font-bold text-slate-300">Name</span>
@@ -792,7 +797,11 @@
             </div>
             <label class="mt-5 block">
               <span class="mb-2 block text-sm font-bold text-slate-300">What should improve?</span>
-              <textarea name="message" rows="5" required class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60" placeholder="Example: daily manual report, slow SQL, messy files, dashboard refresh, API data pull..."></textarea>
+              <textarea id="messageInput" name="message" rows="5" class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60" placeholder="Example: daily manual report, slow SQL, messy files, dashboard refresh, API data pull..."></textarea>
+            </label>
+            <label class="mt-5 flex cursor-pointer items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm font-semibold leading-6 text-slate-300 transition hover:border-cyan-300/35 hover:bg-cyan-300/10">
+              <input id="newsletterInput" name="newsletter" value="Yes" type="checkbox" class="mt-1 h-4 w-4 rounded border-white/20 bg-slate-950 text-cyan-300 focus:ring-cyan-300" />
+              <span>Subscribe to occasional updates on Data Engineering, Azure, Python, AI, Automation, and projects I am building.</span>
             </label>
             <div class="mt-5 grid gap-3 sm:grid-cols-3">
               <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-3 text-center">
@@ -900,6 +909,11 @@
     const referrer = document.getElementById("referrer");
     const submitLead = document.getElementById("submitLead");
     const emailInput = document.getElementById("emailInput");
+    const messageInput = document.getElementById("messageInput");
+    const newsletterInput = document.getElementById("newsletterInput");
+    const inquiryType = document.getElementById("inquiryType");
+    const websiteField = document.getElementById("websiteField");
+    let leadFormSubmitting = false;
 
     function isValidEmail(value) {
       const email = value.trim().toLowerCase();
@@ -918,18 +932,60 @@
       emailInput.setCustomValidity(isValidEmail(emailInput.value) || emailInput.value === "" ? "" : "Please enter a real email address so I can reply.");
     });
 
+    messageInput?.addEventListener("input", () => {
+      messageInput.setCustomValidity("");
+    });
+
+    function getInquiryType(hasMessage, wantsNewsletter) {
+      if (hasMessage && wantsNewsletter) return "Enquiry + Newsletter";
+      if (wantsNewsletter) return "Newsletter Only";
+      return "Enquiry Only";
+    }
+
     leadForm?.addEventListener("submit", async (event) => {
       event.preventDefault();
+      if (leadFormSubmitting) return;
+
+      if (websiteField.value.trim()) {
+        leadForm.reset();
+        return;
+      }
+
+      const nameInput = leadForm.elements.name;
+      nameInput.value = nameInput.value.trim();
+      emailInput.value = emailInput.value.trim().toLowerCase();
+      messageInput.value = messageInput.value.trim();
+      const hasMessage = Boolean(messageInput.value);
+      const wantsNewsletter = newsletterInput.checked;
+
       if (!isValidEmail(emailInput.value)) {
         emailInput.setCustomValidity("Please enter a real email address so I can reply.");
         emailInput.reportValidity();
         return;
       }
 
+      if (!hasMessage && !wantsNewsletter) {
+        messageInput.setCustomValidity("Please share a short message or select the newsletter option.");
+        messageInput.reportValidity();
+        return;
+      }
+
       emailInput.setCustomValidity("");
+      messageInput.setCustomValidity("");
+      inquiryType.value = getInquiryType(hasMessage, wantsNewsletter);
       submittedAt.value = new Date().toISOString();
       pageUrl.value = window.location.href;
       referrer.value = document.referrer || "Direct";
+      const duplicateKey = `${emailInput.value}|${messageInput.value}|${newsletterInput.checked}`;
+      const lastSubmission = JSON.parse(localStorage.getItem("portfolioLeadLastSubmission") || "null");
+      if (lastSubmission?.key === duplicateKey && Date.now() - lastSubmission.time < 60000) {
+        formStatus.textContent = "This looks like a duplicate. Please wait a moment before sending again.";
+        formStatus.className = "mt-4 rounded-2xl border border-amber-300/20 bg-amber-300/10 p-4 text-sm font-bold text-amber-200";
+        formStatus.classList.remove("hidden");
+        return;
+      }
+
+      leadFormSubmitting = true;
       submitLead.disabled = true;
       submitLead.textContent = "Sending...";
       const formPayload = new URLSearchParams(new FormData(leadForm));
@@ -938,6 +994,7 @@
           method: "GET",
           mode: "no-cors",
         });
+        localStorage.setItem("portfolioLeadLastSubmission", JSON.stringify({ key: duplicateKey, time: Date.now() }));
         leadForm.reset();
         formStatus.textContent = "Thanks. Your message has been sent.";
         formStatus.className = "mt-4 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-4 text-sm font-bold text-emerald-200";
@@ -947,6 +1004,7 @@
         formStatus.className = "mt-4 rounded-2xl border border-rose-300/20 bg-rose-300/10 p-4 text-sm font-bold text-rose-200";
         formStatus.classList.remove("hidden");
       } finally {
+        leadFormSubmitting = false;
         submitLead.disabled = false;
         submitLead.textContent = "Send Message";
       }
