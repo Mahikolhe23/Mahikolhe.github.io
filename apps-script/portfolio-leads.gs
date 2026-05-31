@@ -122,6 +122,7 @@ function sendAcknowledgementEmail(payload) {
   MailApp.sendEmail({
     to: payload.email,
     subject: template.subject,
+    body: template.textBody,
     htmlBody: template.htmlBody,
     name: "Mahendra Kolhe",
     replyTo: "mkolhe23@gmail.com"
@@ -135,6 +136,16 @@ function getEmailTemplate(payload) {
   if (payload.inquiryType === "Newsletter Only") {
     return {
       subject: "Welcome to Mahendra Kolhe's data engineering updates",
+      textBody: [
+        `Hi ${payload.name},`,
+        "",
+        "Thanks for subscribing. I will occasionally share useful notes on data engineering, Azure, Python, AI, automation, and projects I am building.",
+        "",
+        "If you ever want to unsubscribe, reply with Unsubscribe.",
+        "",
+        "Regards,",
+        "Mahendra Kolhe"
+      ].join("\n"),
       htmlBody: [
         `<p>Hi ${safeName},</p>`,
         "<p>Thanks for subscribing. I will occasionally share useful notes on data engineering, Azure, Python, AI, automation, and projects I am building.</p>",
@@ -147,6 +158,19 @@ function getEmailTemplate(payload) {
   if (payload.inquiryType === "Enquiry + Newsletter") {
     return {
       subject: "Thanks for reaching out and subscribing",
+      textBody: [
+        `Hi ${payload.name},`,
+        "",
+        "Thanks for reaching out. I have received your note and will review it carefully.",
+        "",
+        "Your message:",
+        payload.message,
+        "",
+        "You are also subscribed to occasional updates on data engineering, Azure, Python, AI, automation, and projects I am building.",
+        "",
+        "Regards,",
+        "Mahendra Kolhe"
+      ].join("\n"),
       htmlBody: [
         `<p>Hi ${safeName},</p>`,
         "<p>Thanks for reaching out. I have received your note and will review it carefully.</p>",
@@ -159,6 +183,17 @@ function getEmailTemplate(payload) {
 
   return {
     subject: "Thanks for reaching out",
+    textBody: [
+      `Hi ${payload.name},`,
+      "",
+      "Thanks for your message. I have received it and will get back to you over email.",
+      "",
+      "Your message:",
+      payload.message,
+      "",
+      "Regards,",
+      "Mahendra Kolhe"
+    ].join("\n"),
     htmlBody: [
       `<p>Hi ${safeName},</p>`,
       "<p>Thanks for your message. I have received it and will get back to you over email.</p>",
