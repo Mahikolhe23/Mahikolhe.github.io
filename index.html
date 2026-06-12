@@ -335,7 +335,7 @@
         <div class="mt-10 grid max-w-3xl grid-cols-3 gap-3">
           <div class="glass rounded-3xl p-5">
             <p id="totalExperience" class="font-display text-3xl font-black text-white">4.5+</p>
-            <p class="mt-1 text-sm font-semibold text-slate-400">Years</p>
+            <p class="mt-1 text-sm font-semibold text-slate-400">Experience</p>
           </div>
           <div class="glass rounded-3xl p-5">
             <p class="font-display text-3xl font-black text-white">30+</p>
@@ -896,12 +896,21 @@
     const priorDocumentedMonths = 46; // thyssenkrupp 1y4m + Xcaliber 2y6m
     const adpMonths = monthDiffInclusive(new Date(2025, 9, 1), new Date());
     const totalMonths = priorDocumentedMonths + Math.max(0, adpMonths);
-    const halfYearExperience = Math.floor(totalMonths / 6) / 2;
+    
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+    
     const totalExperience = document.getElementById("totalExperience");
+    
     if (totalExperience) {
-      totalExperience.textContent = `${halfYearExperience.toFixed(1)}+`;
+      if (months === 0) {
+        totalExperience.textContent = `${years} Years`;
+      } else if (months === 1) {
+        totalExperience.textContent = `${years} Years ${months} Month`;
+      } else {
+        totalExperience.textContent = `${years} Years ${months} Months`;
+      }
     }
-
     const leadForm = document.getElementById("leadForm");
     const formStatus = document.getElementById("formStatus");
     const submittedAt = document.getElementById("submittedAt");
